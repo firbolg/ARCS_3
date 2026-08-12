@@ -499,7 +499,7 @@
     "href": "workshops/arcs_02/04-slides.html#this-works-in-quarto-presentations",
     "title": "Introduction to\nProgramming in R Part 2:\nReports",
     "section": "This works in Quarto Presentations!",
-    "text": "This works in Quarto Presentations!\n.\n├── 03-structures.html\n├── 03-structures.qmd\n├── 03-structures.quarto_ipynb\n├── 04-reports.html\n├── 04-reports.qmd\n├── 04-slides.qmd\n├── 04-slides.rmarkdown\n└── part-2-catch-up.R\n\nDEMO: I can add to my comment “outputs” comment “and Quarto doc” and render and it immediately appears in my slides. Rendering also automatically saves the .qmd file."
+    "text": "This works in Quarto Presentations!\n.\n├── 03-structures.html\n├── 03-structures.qmd\n├── 04-reports.html\n├── 04-reports.qmd\n├── 04-slides.qmd\n├── 04-slides.rmarkdown\n└── part-2-catch-up.R\n\nDEMO: I can add to my comment “outputs” comment “and Quarto doc” and render and it immediately appears in my slides. Rendering also automatically saves the .qmd file."
   },
   {
     "objectID": "workshops/arcs_02/04-slides.html#when-its-time-to-write-up-what-you-did",
