@@ -92,6 +92,8 @@ website:
 
 format:
   html:
+    include-in-header: 
+      - _includes/google_analytics.html
     theme:
       - cosmo
       - brand
