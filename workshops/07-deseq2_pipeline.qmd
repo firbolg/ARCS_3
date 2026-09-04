@@ -103,7 +103,7 @@ Why use `here::here()`? Using `here()` makes your paths relative to the project 
 dir_data <- if (dir.exists(here("processed_data"))) {
   here("processed_data")
 } else {
-  here("workshops", "arcs_04", "_materials", "processed_data")
+  here("workshops", "apptainer", "_materials", "processed_data")
 }
 
 dir_out <- if (dir.exists(here("processed_data"))) {
