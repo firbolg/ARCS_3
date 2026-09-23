@@ -1,0 +1,166 @@
+---
+title: "Session 0: Before You Arrive"
+subtitle: "Getting your machine ready for ARCS"
+toc: true
+sidebar: false
+---
+
+## The Short Version
+
+If you can do only one thing before Session 1, do this: **install R and Positron on your computer.**
+
+Everything else we can help you with at the start of class.
+
+If you can do more, great — the full setup instructions are below. The more you complete before arriving, the more you will get out of Session 1.
+
+::: {.callout-important icon="false"}
+## ⚠️ Work or School Laptop?
+
+If you are on a work or school-managed laptop, you may need **administrator rights** to install software. Test this before class by attempting to install R (Step 1 below).
+
+If you do not have admin rights, contact your IT department before the workshop and ask them to install R, Positron, and GitHub Desktop. If that is not possible in time, you can still follow along using this website during Session 1 — and we will help you find a longer-term solution between sessions.
+
+Do not wait until class starts to discover this. It is the single most common setup problem we encounter.
+
+:::
+
+---
+
+## Setup Steps
+
+Complete as many of these as you can before Session 1, in order. Stop wherever you get stuck and bring your questions to class — or reach out to us in advance using the contact information at the bottom of this page.
+
+---
+
+### Step 1: Install R
+
+R is the statistical computing language we will use throughout the series.
+
+**Windows and Mac:**
+
+1. Go to [cran.r-project.org](https://cran.r-project.org)
+2. Click your operating system
+3. Download the latest installer
+4. Run the installer using all default options
+
+**Windows only — also install Rtools:**
+
+After installing R, go to the [Rtools page on CRAN](https://cran.r-project.org/bin/windows/Rtools/) and download the version that matches your R installation (e.g., Rtools44 for R 4.4). Run the installer using default options.
+
+**Mac only — also install Command Line Tools:**
+
+Open the Terminal application (search for "Terminal" in Spotlight) and run:
+
+```bash
+xcode-select --install
+```
+
+A dialog box will appear — click Install and follow the prompts.
+
+::: {.callout-note icon="false"}
+
+📘 About This: Why Both R and Rtools/Command Line Tools?
+
+R is the language. Rtools (Windows) and Command Line Tools (Mac) are compilers that allow R to build certain packages from source code — including several packages we use in this series. You will not interact with them directly, but R needs them to be present. 
+
+:::
+
+Step 2: Create a GitHub Account
+
+GitHub is where we will store and share our work. You will need a free account.
+
+    Go to github.com and click Sign up
+    Enter your email address, create a password, and choose a username
+    Verify your account using the code GitHub sends to your email
+    You can skip the personalization questions at the end
+
+Keep a note of your username and password — you will need them in Step 3.
+Step 3: Install GitHub Desktop
+
+GitHub Desktop is a visual application that makes it easier to work with Git and GitHub without using the command line.
+
+Windows:
+
+    Go to desktop.github.com
+    Click Download for Windows (64-bit)
+    Run the downloaded .exe file — it will install and open automatically
+    Sign in with the GitHub account you created in Step 2
+
+Mac:
+
+    Go to desktop.github.com
+    Click Download for macOS
+    Open the downloaded .zip file — this extracts the GitHub Desktop app
+    Drag GitHub Desktop into your Applications folder
+    Open it from Applications and sign in with your GitHub account
+
+Step 4: Get the Course Data
+
+We will use the same dataset throughout the series. Clone the course data repository using GitHub Desktop:
+
+    Make sure GitHub Desktop is open and you are signed in
+    Visit this URL in your browser: https://github.com/CWML/arcs-data
+    Click the green Code button
+    Select Open with GitHub Desktop
+    When GitHub Desktop opens, choose a location you can find easily (Desktop or Documents) and click Clone
+
+This downloads a folder called arcs-data containing the two data files we will use. You do not need to do anything else with this folder yet — we will use it in Session 1.
+
+::: {.callout-note icon="false"}
+📘 About This: Why Clone Instead of Just Downloading?
+
+We clone the data repository rather than downloading a zip file so that you practice the same workflow you will use throughout the series. Cloning also makes it easy to get any updates we push before future sessions. 
+
+:::
+
+Step 5: Install Positron
+
+Positron is the IDE (integrated development environment) we will use to write and run R code. It was built by Posit specifically for data science work.
+
+    Go to the Positron releases page on GitHub
+    Find the most recent stable release
+    Under Assets, download the installer for your operating system:
+        Windows: .exe file
+        Mac: .dmg file
+    Run the installer
+    Open Positron — it should automatically detect your R installation and show R in the bottom right corner
+
+::: {.callout-important icon="false"}
+⚠️ Watch Out
+
+If Positron does not detect R automatically, go to Settings → R and point it to your R installation manually. On Mac this is usually /usr/local/bin/R or /opt/homebrew/bin/R. On Windows it is usually C:\Program Files\R\R-4.x.x\bin\R.exe. 
+
+:::
+
+Step 6: Open the Course Repository in Positron
+
+Once Positron is installed:
+
+    Open Positron
+    Go to File → Open Folder
+    Navigate to the arcs-data folder you cloned in Step 4
+    Click Open
+
+Positron will restart in project mode. You should see the folder contents in the file explorer panel on the left.
+
+## What to Expect at the Start of Session 1
+
+Here is what will happen:
+
+    The first 15–20 minutes of Session 1 are reserved for setup
+    If you have everything installed, there will be a short warm-up task to work on while others finish setup
+    If you are still installing or troubleshooting, follow the steps above with help from the instructors
+    If you are blocked by an admin rights issue or a persistent error, open this website on your laptop — you can follow along with everything we do in Session 1 from here, and we will help you sort out your local environment between sessions
+
+No one gets left behind. Setup problems are a normal part of working with research software, and troubleshooting them is itself a skill we will build together.
+
+## Need Help Before Class?
+
+If you hit a wall during setup, reach out to us before the workshop:
+
+    Levi Dolan: levi.dolan@yale.edu
+    Max Wegener: maximilian.wegener@yale.edu
+    Sofia Fertuzinhos: sofia.fertuzinhos@yale.edu
+    Justin DeMayo: justin.demayo@yale.edu
+
+You can also come at 9:00 AM on the day of Session 1 — we will be there early and happy to help.
