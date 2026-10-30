@@ -619,21 +619,21 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Location: Cushing/Whitney Medical Library, Yale University\nFormat: Four sessions, weekly, 9:00 AM – 12:00 PM\nInstructors: Levi Dolan, Sofia Fertuzinhos, Max Wegener, Justin DeMayo\nBefore the first session, complete the pre-workshop setup.\n\n\n\n\nSession\nDate\nTopic\nMaterials\n\n\n\n\nSession 1\n[date]\nR in a Reproducible Project\nSession 1\n\n\nSession 2\n[date]\nControl Flow, Functions & Documents\nSession 2\n\n\nSession 3\n[date]\nData Transformation & Version Control\nSession 3\n\n\nSession 4\n[date]\nPipelines, Environments & AI\nSession 4\n\n\n\n\n\n\n\n\n\n\nNote📘 About This Series\n\n\n\nARCS is a four-session workshop series introducing reproducible research computing with R. No prior programming experience is required. Each session builds on the last — participants leave with a working, version-controlled, reproducible project built from scratch.\nFor background on the series, its goals, and how to reuse these materials, see the About page."
+    "text": "Location: Cushing/Whitney Medical Library, Yale University\nFormat: Four sessions, weekly, 9:00 AM – 12:00 PM\nInstructors: Levi Dolan, Sofia Fertuzinhos, Max Wegener, Justin DeMayo\nBefore the first session, complete the pre-workshop setup.\n\n\n\n\nSession\nDate\nTopic\nMaterials\n\n\n\n\nSession 1\n[date]\n\n\n\n\nSession 2\n[date]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote📘 About This Series\n\n\n\nARCS is a four-session workshop series introducing reproducible research computing with R. No prior programming experience is required. Each session builds on the last — participants leave with a working, version-controlled, reproducible project built from scratch.\nFor background on the series, its goals, and how to reuse these materials, see the About page."
   },
   {
     "objectID": "schedule.html#arcs-2027",
     "href": "schedule.html#arcs-2027",
     "title": "Schedule",
     "section": "",
-    "text": "Location: Cushing/Whitney Medical Library, Yale University\nFormat: Four sessions, weekly, 9:00 AM – 12:00 PM\nInstructors: Levi Dolan, Sofia Fertuzinhos, Max Wegener, Justin DeMayo\nBefore the first session, complete the pre-workshop setup.\n\n\n\n\nSession\nDate\nTopic\nMaterials\n\n\n\n\nSession 1\n[date]\nR in a Reproducible Project\nSession 1\n\n\nSession 2\n[date]\nControl Flow, Functions & Documents\nSession 2\n\n\nSession 3\n[date]\nData Transformation & Version Control\nSession 3\n\n\nSession 4\n[date]\nPipelines, Environments & AI\nSession 4\n\n\n\n\n\n\n\n\n\n\nNote📘 About This Series\n\n\n\nARCS is a four-session workshop series introducing reproducible research computing with R. No prior programming experience is required. Each session builds on the last — participants leave with a working, version-controlled, reproducible project built from scratch.\nFor background on the series, its goals, and how to reuse these materials, see the About page."
+    "text": "Location: Cushing/Whitney Medical Library, Yale University\nFormat: Four sessions, weekly, 9:00 AM – 12:00 PM\nInstructors: Levi Dolan, Sofia Fertuzinhos, Max Wegener, Justin DeMayo\nBefore the first session, complete the pre-workshop setup.\n\n\n\n\nSession\nDate\nTopic\nMaterials\n\n\n\n\nSession 1\n[date]\n\n\n\n\nSession 2\n[date]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote📘 About This Series\n\n\n\nARCS is a four-session workshop series introducing reproducible research computing with R. No prior programming experience is required. Each session builds on the last — participants leave with a working, version-controlled, reproducible project built from scratch.\nFor background on the series, its goals, and how to reuse these materials, see the About page."
   },
   {
     "objectID": "sessions/session_1.html",
     "href": "sessions/session_1.html",
-    "title": "1. R in a Reproducible Project",
+    "title": "Session 1 — R in a Reproducible Project",
     "section": "",
-    "text": "Content coming soon.",
+    "text": "This session is split into two 50-minute arcs with a 10-minute break between them. By the end of today, you will have written your first R code, created a reproducible project, and loaded a real dataset that we’ll use for the rest of the series.",
     "crumbs": [
       "1. R in a Reproducible Project"
     ]
@@ -1249,5 +1249,781 @@
     "title": "Introduction to\nProgramming in R Part 4:\nContainerization with Apptainer",
     "section": "Where to go next",
     "text": "Where to go next\n\nSelf-paced guide: build your own container\n\ninstall a Linux substrate locally\nread deseq2.def line by line\nbuild your own image from that definition\n\nAdapt the pattern to your own analysis"
+  },
+  {
+    "objectID": "sessions/session_1.html#slides",
+    "href": "sessions/session_1.html#slides",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "📊 Slides",
+    "text": "📊 Slides\nOpen the Session 1 Slides →",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#build",
+    "href": "sessions/session_1.html#build",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "🔨 Build",
+    "text": "🔨 Build\n\nOrient to Positron\nBefore writing any code, take a moment to locate four things in your Positron window:\n\nThe Console — where code runs and results appear\nThe Editor — where you write and save scripts\nThe Environment pane — where your objects (variables) appear once created\nThe Files pane — where you can see and navigate your project folder\n\nFind and set your working directory — the folder R considers “home” for this session:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote\n\n\n\nIn Positron, you can also set your working directory by right-clicking a folder in the Files pane and choosing Set as Working Directory — no code required.\n\n\n\n\nFour Basic Rules for Writing Code\n\nUse # to annotate and document your code\nUse a visible pattern to separate sections, e.g. #----- Section Title ------#\nArithmetic works the way it does on paper\nLetters and words must be wrapped in quotation marks \" \" — object names are the exception\n\n\n\nArithmetic\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nImportantTry It\n\n\n\nRun Hello world! and then run \"Hello world!\". What’s different about the output, and why?\n\n\n\n\nObjects and Assignment\nR stores information in objects using the assignment arrow &lt;-.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNoteObject Naming Rules\n\n\n\n\nMust start with a letter (not a number or symbol)\nCan contain letters, numbers, _ and .\nCase-sensitive: age and Age are different objects\nAvoid names that are already functions in R (e.g. c, mean, data)\n\n\n\n\n\nData Types\nR has a few core data types you’ll use constantly:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nVectors\nA vector holds multiple values of the same type, built with c():\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nCalling Functions\nA function takes arguments (inputs) and returns a value (output). You’ve already called one — c(). Here are three more:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBuilding Your First Data Frame\nA data frame is a table — rows and columns, like a spreadsheet. Let’s turn our family ages into one:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAdd a names column with cbind():\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nInspect it three ways:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#code-tour",
+    "href": "sessions/session_1.html#code-tour",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "💻 Code Tour",
+    "text": "💻 Code Tour\n\nHandling Missing Data with is.na()\nReal data almost always has gaps. Let’s add a new family member whose age we don’t know yet, and see how R represents “unknown.”\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nis.na() checks a single vector for missing values:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe same function works on a single column of a data frame:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#learn-more",
+    "href": "sessions/session_1.html#learn-more",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "📘 Learn More",
+    "text": "📘 Learn More\n\n\n\n\n\n\nNote0 vs. NA — these are not the same thing\n\n\n\n\n\nIt’s tempting to treat 0 as a stand-in for “nothing” — but in R, 0 is a real, known value, while NA means unknown or not recorded. A newborn family member who is 0 years old is a known fact. A family member whose age wasn’t recorded is NA. Mixing these up is one of the most common silent errors in data cleaning — a 0 will be included in a mean() calculation and quietly skew your result, while an NA will correctly signal “this value is missing” (and by default, will make mean() return NA until you decide how to handle it).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#ℹ-about-this",
+    "href": "sessions/session_1.html#ℹ-about-this",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "ℹ️ About This",
+    "text": "ℹ️ About This\n\n\n\n\n\n\nNoteWhy start with base R instead of the tidyverse?\n\n\n\n\n\nYou’ll learn dplyr, pipes, and ggplot2 in Session 3 — they make data work faster and more readable. But every one of those tools is built on top of the fundamentals you just used: objects, vectors, data frames, and functions. Starting here means that when something breaks later, you’ll be able to read the error and understand what’s actually happening underneath the friendlier syntax.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#can-you",
+    "href": "sessions/session_1.html#can-you",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "✅ Can You…?",
+    "text": "✅ Can You…?\n\nFind and set your working directory?\nWrite and run basic arithmetic in R?\nCreate an object using &lt;- and explain what it stores?\nName at least three rules for naming R objects?\nCreate a vector using c()?\nCall a function and explain what an argument and a return value are?\nBuild a data frame from two or more vectors?\nUse is.na() to find a missing value in a vector or a data frame column?",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#break-10-minutes",
+    "href": "sessions/session_1.html#break-10-minutes",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "☕ Break (10 minutes)",
+    "text": "☕ Break (10 minutes)",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#slides-1",
+    "href": "sessions/session_1.html#slides-1",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "📊 Slides",
+    "text": "📊 Slides\nOpen the Session 1 Slides →",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#build-1",
+    "href": "sessions/session_1.html#build-1",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "🔨 Build",
+    "text": "🔨 Build\n\nWhy Project Management Matters\nA consistent project structure means a collaborator — or you, six months from now — can open your folder and immediately understand what goes where, without asking you a single question.\n\n\nCreate an R Project\nIn Positron: File → New Folder from Project Template → R Project, or create a plain folder and open it in Positron as your working directory.\n\n\nBuild Your Folder Structure\n\ndir.create(\"raw_data\")\ndir.create(\"processed_data\")\ndir.create(\"scripts\")\ndir.create(\"outputs\")\n\n\n\n\nFolder\nPurpose\n\n\n\n\nraw_data/\nOriginal data. Never edit these files directly.\n\n\nprocessed_data/\nCleaned, transformed versions of your data.\n\n\nscripts/\nYour code.\n\n\noutputs/\nFigures, tables, and results.\n\n\n\n\n\n\n\n\n\nWarningFile Naming Conventions\n\n\n\n\nNo spaces — use _ or - instead\nStart timestamped files with an ISO date: YYYY-MM-DD\nBe descriptive\n\nAvoid: - ❌ data analysis.R (spaces) - ❌ data.csv (not descriptive) - ❌ final_FINAL_really_final.R (version chaos)\nPrefer: - ✅ 2024-03-15_survey_analysis.R - ✅ participant_demographics_clean.csv - ✅ README.md\n\n\n\n\nInitialize renv\nrenv tracks exactly which package versions your project uses, so it runs the same way on any machine, including yours a year from now.\n\nrenv::init()\nrenv::snapshot()\n\nThis creates:\n├── .Rprofile\n├── renv.lock\n└── renv/\n    ├── .gitignore\n    ├── activate.R\n    ├── settings.json\n    └── library/\n\n\nLoad the Dataset\nWe’ll use this dataset — real RNA-seq data from a published Shank3 mouse study — for the rest of the series.\n\n# ---- Download once, save locally ----\nmetadata_url  &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\"\nrawcounts_url &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\"\n\ndownload.file(metadata_url,  destfile = \"raw_data/GSE113754_filtered_metadata.csv\")\ndownload.file(rawcounts_url, destfile = \"raw_data/GSE113754_GeneLevel_Raw_data.csv\")\n\nmetadata  &lt;- read.csv(\"raw_data/GSE113754_filtered_metadata.csv\")\nrawcounts &lt;- read.csv(\"raw_data/GSE113754_GeneLevel_Raw_data.csv\")\n\n# ---- For browser-based students only: uncomment the lines below ----\n# metadata  &lt;- read.csv(\"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\")\n# rawcounts &lt;- read.csv(\"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\")\n\nInspect what you loaded:\n\nhead(metadata)\nstr(metadata)\ndim(rawcounts)\n\n\n\nWrite a README\n\ninstall.packages(\"fs\")\nlibrary(fs)\nfs::dir_tree()\ncapture.output(fs::dir_tree(), file = \"README.txt\")\n\nThen open README.txt and fill in the template:\nThis readme file was generated on [YYYY-MM-DD] by [NAME]\n\nGENERAL INFORMATION\n\nTitle of Dataset:\n\nAuthor/Principal Investigator Information\nName:\nORCID:\nInstitution:\nAddress:\nEmail:\n\nSHARING/ACCESS INFORMATION\n\nThis data was retrieved through the GREIN web platform, which\ninterfaces with the NIH Gene Expression Omnibus (GEO) repository.\nLink to dataset: https://www.ilincs.org/apps/grein/?gse=GSE113754\n\nDATA & FILE OVERVIEW\n\nraw_data/        — original data (never edited)\nprocessed_data/  — cleaned data\nscripts/         — analysis code\noutputs/         — figures, tables, results",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#code-tour-1",
+    "href": "sessions/session_1.html#code-tour-1",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "💻 Code Tour",
+    "text": "💻 Code Tour\n\nWhat’s Actually Inside renv.lock?\nYou don’t need to edit this file by hand, but it’s worth knowing what it contains:\n{\n  \"R\": {\n    \"Version\": \"4.6.0\"\n  },\n  \"Packages\": {\n    \"dplyr\": {\n      \"Package\": \"dplyr\",\n      \"Version\": \"1.1.4\",\n      \"Source\": \"Repository\"\n    }\n  }\n}\nEvery package your project depends on gets pinned to an exact version here. When a collaborator runs renv::restore(), R installs these exact versions — not whatever happens to be newest that day.\n\n\nFor Browser-Based Students: Reading the Real Data\nIf you’re following along in the browser without a local R install, you can still load and inspect the real dataset directly from its source:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#learn-more-1",
+    "href": "sessions/session_1.html#learn-more-1",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "📘 Learn More",
+    "text": "📘 Learn More\n\n\n\n\n\n\nNoterenv documentation\n\n\n\n\n\nThe full renv documentation covers restoring environments, handling package conflicts, and working in teams: rstudio.github.io/renv\n\n\n\n\n\n\n\n\n\nNoteREADME templates\n\n\n\n\n\nThis project’s README is a simplified version of the Cornell Research Data Management README template: Cornell eCommons README Template",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#ℹ-about-this-1",
+    "href": "sessions/session_1.html#ℹ-about-this-1",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "ℹ️ About This",
+    "text": "ℹ️ About This\n\n\n\n\n\n\nImportantThe project is the unit of reproducibility\n\n\n\n\n\nIt’s tempting to think of a single script as “the analysis.” But a script alone can’t be reproduced — it depends on data files, package versions, and a folder structure that has to exist for it to run. The project, not the script, is what makes your work reproducible: the folders, the renv.lock, the raw data, and the code together. If you zipped your project folder and sent it to a stranger, could they run it? That’s the real test.\n\n\n\n\n\n\n\n\n\nNoteWhy does the Build block download the data, but the Code Tour reads it straight from a URL?\n\n\n\n\n\nThis isn’t an inconsistency — it’s intentional. In a real project, raw data should live inside your project folder (raw_data/) so your analysis doesn’t silently depend on the internet being available every time you run it. If the GitHub repo moves, is renamed, or GitHub has an outage, a project with a local copy still runs. A project that re-fetches a URL every time does not.\nBrowser-based tools like webR can’t save a persistent local copy the way a laptop can, so reading from the URL each time is the necessary workaround for that environment — not the ideal pattern. You’re seeing a real technical tradeoff, not a mistake.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#can-you-1",
+    "href": "sessions/session_1.html#can-you-1",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "✅ Can You…?",
+    "text": "✅ Can You…?\n\nCreate a folder structure with raw_data/, processed_data/, scripts/, and outputs/?\nExplain at least two file naming rules and why they matter?\nInitialize an R environment with renv::init()?\nExplain what renv.lock is and why it matters for reproducibility?\nLoad a dataset into R and inspect it with head(), str(), and dim()?\nUse fs::dir_tree() to generate a project structure listing?\nWrite and populate a README file for a project?",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#orient-to-positron",
+    "href": "sessions/session_1.html#orient-to-positron",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Orient to Positron",
+    "text": "Orient to Positron\nBefore writing any code, take a moment to locate four things in your Positron window:\n\nThe Console — where code runs and results appear\nThe Editor — where you write and save scripts\nThe Environment pane — where your objects (variables) appear once created\nThe Files pane — where you can see and navigate your project folder\n\nFind your working directory — the folder R considers “home” for this session:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote⚪ About This — Setting Your Working Directory Without Code\n\n\n\n\n\nIn Positron, you can also set your working directory by right-clicking a folder in the Files pane and choosing Set as Working Directory — no code required. This is often faster than typing setwd(), and it’s less error-prone since you’re pointing at a real folder rather than typing a path by hand.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#four-basic-rules-for-writing-code",
+    "href": "sessions/session_1.html#four-basic-rules-for-writing-code",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Four Basic Rules for Writing Code",
+    "text": "Four Basic Rules for Writing Code\n\nUse # to annotate and document your code\nUse a visible pattern to separate sections, e.g. #----- Section Title ------#\nArithmetic works the way it does on paper\nLetters and words must be wrapped in quotation marks \" \" — object names are the exception",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#arithmetic",
+    "href": "sessions/session_1.html#arithmetic",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Arithmetic",
+    "text": "Arithmetic\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRun Hello world! on its own, then run \"Hello world!\" in quotes.\n\n\n\n\n\n\nCaution🟠 Code Tour — Why does one of these fail?\n\n\n\n\n\nHello world!\nR reads this as an attempt to call an object named Hello — but Hello has never been created, and world! isn’t valid syntax here either. You’ll see an error like unexpected symbol. Wrapping it in quotes tells R “this is text, not code”:\n\"Hello world!\"\nError messages like this will come up constantly — learning to read them calmly is a core R skill, not a sign something’s gone wrong.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#objects-and-assignment",
+    "href": "sessions/session_1.html#objects-and-assignment",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Objects and Assignment",
+    "text": "Objects and Assignment\nR stores information in objects using the assignment arrow &lt;-.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote🟣 Learn More — Object Naming Rules\n\n\n\n\n\n\nMust start with a letter (not a number or symbol)\nCan contain letters, numbers, _ and .\nCase-sensitive: age and Age are different objects\nAvoid names that are already functions in R (e.g. c, mean, data)",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#data-types",
+    "href": "sessions/session_1.html#data-types",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Data Types",
+    "text": "Data Types\nR has a few core data types you’ll use constantly:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#vectors",
+    "href": "sessions/session_1.html#vectors",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Vectors",
+    "text": "Vectors\nA vector holds multiple values of the same type, built with c():\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nCaution🟠 Code Tour — Vectors Don’t Have to Be Numbers\n\n\n\n\n\nFamNames &lt;- c(\"Ana\", \"Ben\", \"Carla\", \"Dev\")\nis_adult  &lt;- c(TRUE, TRUE, TRUE, FALSE)\nA vector can hold character or logical values too — but every element inside one vector must be the same type. Try running c(1, \"two\", 3) and look closely at the result. What happened to the 1 and the 3?",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#calling-functions",
+    "href": "sessions/session_1.html#calling-functions",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Calling Functions",
+    "text": "Calling Functions\nA function takes arguments (inputs) and returns a value (output). You’ve already called one — c(). Here are three more:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote⚪ About This — Why parentheses?\n\n\n\n\n\nParentheses tell R “run this now.” Typing mean alone just shows you the function’s underlying code — typing mean() actually executes it. This distinction matters more once you start writing your own functions, in Session 2.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#building-your-first-data-frame",
+    "href": "sessions/session_1.html#building-your-first-data-frame",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Building Your First Data Frame",
+    "text": "Building Your First Data Frame\nA data frame is a table — rows and columns, like a spreadsheet. Let’s turn our family ages into one. Feel free to swap in your own numbers here instead of ours.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAdd a names column with cbind():\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nInspect it three ways:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote🟣 Learn More — head(), str(), and dim() each answer a different question\n\n\n\n\n\n\nhead() — “What does my data actually look like?”\nstr() — “What type is each column, and how is this object structured?”\ndim() — “How big is this — how many rows and columns?” You’ll run this same trio on almost every dataset you ever load into R, including the real genomics data later today.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#why-project-management-matters",
+    "href": "sessions/session_1.html#why-project-management-matters",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Why Project Management Matters",
+    "text": "Why Project Management Matters\nA consistent project structure means a collaborator — or you, six months from now — can open your folder and immediately understand what goes where, without asking you a single question.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#create-an-r-project",
+    "href": "sessions/session_1.html#create-an-r-project",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Create an R Project",
+    "text": "Create an R Project\nIn Positron: File → New Folder from Project Template → R Project, or create a plain folder and open it in Positron as your working directory.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#build-your-folder-structure",
+    "href": "sessions/session_1.html#build-your-folder-structure",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Build Your Folder Structure",
+    "text": "Build Your Folder Structure\n\ndir.create(\"raw_data\")\ndir.create(\"processed_data\")\ndir.create(\"scripts\")\ndir.create(\"outputs\")\n\n\n\n\nFolder\nPurpose\n\n\n\n\nraw_data/\nOriginal data. Never edit these files directly.\n\n\nprocessed_data/\nCleaned, transformed versions of your data.\n\n\nscripts/\nYour code.\n\n\noutputs/\nFigures, tables, and results.\n\n\n\n\n\n\n\n\n\nCaution🟠 Code Tour — File Naming Conventions\n\n\n\n\n\n\nNo spaces — use _ or - instead\nStart timestamped files with an ISO date: YYYY-MM-DD\nBe descriptive\n\nAvoid: - ❌ data analysis.R (spaces) - ❌ data.csv (not descriptive) - ❌ final_FINAL_really_final.R (version chaos)\nPrefer: - ✅ 2024-03-15_survey_analysis.R - ✅ participant_demographics_clean.csv - ✅ README.md",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#initialize-renv",
+    "href": "sessions/session_1.html#initialize-renv",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Initialize renv",
+    "text": "Initialize renv\nrenv tracks exactly which package versions your project uses, so it runs the same way on any machine, including yours a year from now.\n\nrenv::init()\nrenv::snapshot()\n\nThis creates:\n├── .Rprofile\n├── renv.lock\n└── renv/\n    ├── .gitignore\n    ├── activate.R\n    ├── settings.json\n    └── library/\n\n\n\n\n\n\nNote🟣 Learn More — What’s actually inside renv.lock?\n\n\n\n\n\n{\n  \"R\": { \"Version\": \"4.6.0\" },\n  \"Packages\": {\n    \"dplyr\": {\n      \"Package\": \"dplyr\",\n      \"Version\": \"1.1.4\",\n      \"Source\": \"Repository\"\n    }\n  }\n}\nEvery package your project depends on gets pinned to an exact version here. When a collaborator runs renv::restore(), R installs these exact versions — not whatever happens to be newest that day. The full renv documentation is at rstudio.github.io/renv.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#load-the-dataset",
+    "href": "sessions/session_1.html#load-the-dataset",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Load the Dataset",
+    "text": "Load the Dataset\nWe’ll use this dataset — real RNA-seq data from a published Shank3 mouse study — for the rest of the series.\n\n# ---- Download once, save locally ----\nmetadata_url  &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\"\nrawcounts_url &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\"\n\ndownload.file(metadata_url,  destfile = \"raw_data/GSE113754_filtered_metadata.csv\")\ndownload.file(rawcounts_url, destfile = \"raw_data/GSE113754_GeneLevel_Raw_data.csv\")\n\nmetadata  &lt;- read.csv(\"raw_data/GSE113754_filtered_metadata.csv\")\nrawcounts &lt;- read.csv(\"raw_data/GSE113754_GeneLevel_Raw_data.csv\")\n\n# ---- For browser-based students only: uncomment the lines below ----\n# metadata  &lt;- read.csv(\"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\")\n# rawcounts &lt;- read.csv(\"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\")\n\nInspect what you loaded:\n\nhead(metadata)\nstr(metadata)\ndim(rawcounts)\n\n\n\n\n\n\n\nNote⚪ About This — Why download-and-save here, but read-from-URL in the Code Tour below?\n\n\n\n\n\nThis isn’t an inconsistency — it’s intentional. In a real project, raw data should live inside your project folder (raw_data/) so your analysis doesn’t silently depend on the internet being available every time you run it. If the GitHub repo moves, is renamed, or GitHub has an outage, a project with a local copy still runs. A project that re-fetches a URL every time does not.\nBrowser-based tools like webR can’t save a persistent local copy the way a laptop can, so reading from the URL each time is the necessary workaround for that environment — not the ideal pattern. You’re seeing a real technical tradeoff, not a mistake.\n\n\n\n🟠 Code Tour — For browser-based students: you can still load and inspect the real dataset directly from its source, right here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#write-a-readme",
+    "href": "sessions/session_1.html#write-a-readme",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Write a README",
+    "text": "Write a README\n\ninstall.packages(\"fs\")\nlibrary(fs)\nfs::dir_tree()\ncapture.output(fs::dir_tree(), file = \"README.txt\")\n\nThen open README.txt and fill in the template:\nThis readme file was generated on [YYYY-MM-DD] by [NAME]\n\nGENERAL INFORMATION\n\nTitle of Dataset:\n\nAuthor/Principal Investigator Information\nName:\nORCID:\nInstitution:\nAddress:\nEmail:\n\nSHARING/ACCESS INFORMATION\n\nThis data was retrieved through the GREIN web platform, which\ninterfaces with the NIH Gene Expression Omnibus (GEO) repository.\nLink to dataset: https://www.ilincs.org/apps/grein/?gse=GSE113754\n\nDATA & FILE OVERVIEW\n\nraw_data/        — original data (never edited)\nprocessed_data/  — cleaned data\nscripts/         — analysis code\noutputs/         — figures, tables, results\n\n\n\n\n\n\nNote🟣 Learn More — README Templates\n\n\n\n\n\nThis project’s README is a simplified version of the Cornell Research Data Management README template: Cornell eCommons README Template\n\n\n\n\n\n\n\n\n\nNote⚪ About This — The project is the unit of reproducibility\n\n\n\n\n\nIt’s tempting to think of a single script as “the analysis.” But a script alone can’t be reproduced — it depends on data files, package versions, and a folder structure that has to exist for it to run. The project, not the script, is what makes your work reproducible: the folders, the renv.lock, the raw data, and the code together. If you zipped your project folder and sent it to a stranger, could they run it? That’s the real test.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#what-we-did",
+    "href": "sessions/session_1.html#what-we-did",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "⚪ What We Did",
+    "text": "⚪ What We Did\nToday, you:\n\nWrote your first lines of R — arithmetic, objects, vectors, and functions\nBuilt your first data frame from scratch\nCreated a reproducible project with a standard folder structure\nInitialized renv to track your project’s dependencies\nLoaded a real genomics dataset you’ll use for the rest of this series\nWrote a README so someone else could understand your project",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#why-we-did-it-this-way",
+    "href": "sessions/session_1.html#why-we-did-it-this-way",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Why We Did It This Way",
+    "text": "Why We Did It This Way\n\nLearn computational skills while establishing best practices\nThink about the future as you are forming habits\nDocument and automate iteratively\nGive your work collaborative potential\n\n…so reproducibility becomes how you work, not someone else’s checklist.",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "sessions/session_1.html#section",
+    "href": "sessions/session_1.html#section",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "",
+    "text": "title: “Session 1 — R in a Reproducible Project” subtitle: “Arc 1: R Fundamentals · Arc 2: Your First Reproducible Project” engine: knitr filters: - webr webr: cell-options: reset-button: true —\nThis session is split into two 50-minute arcs with a 10-minute break between them. By the end of today, you will have written your first R code, created a reproducible project, and loaded a real dataset that we’ll use for the rest of the series.\n\n\n\n\n\n\nTipSession 1 at a Glance\n\n\n\n\nArc 1 (50 min): R Fundamentals — objects, vectors, data types, your first data frame\nBreak (10 min)\nArc 2 (50 min): Your First Reproducible Project — folder structure, renv, loading real data, README",
+    "crumbs": [
+      "1. R in a Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "arcs/session_4.html",
+    "href": "arcs/session_4.html",
+    "title": "4. Pipelines, Environments, & AI",
+    "section": "",
+    "text": "Content coming soon."
+  },
+  {
+    "objectID": "arcs/session_2.html",
+    "href": "arcs/session_2.html",
+    "title": "2. Control Flow, Functions, & Documents",
+    "section": "",
+    "text": "Content coming soon."
+  },
+  {
+    "objectID": "arcs/session_1.html",
+    "href": "arcs/session_1.html",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "",
+    "text": "This session is split into two 50-minute arcs with a 10-minute break between them. By the end of today, you will have written your first R code, created a reproducible project, and loaded a real dataset that we’ll use for the rest of the series."
+  },
+  {
+    "objectID": "arcs/session_1.html#orient-to-positron",
+    "href": "arcs/session_1.html#orient-to-positron",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Orient to Positron",
+    "text": "Orient to Positron\nBefore writing any code, take a moment to locate four things in your Positron window:\n\nThe Console — where code runs and results appear\nThe Editor — where you write and save scripts\nThe Environment pane — where your objects (variables) appear once created\nThe Files pane — where you can see and navigate your project folder\n\nFind your working directory — the folder R considers “home” for this session:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote⚪ About This — Setting Your Working Directory Without Code\n\n\n\n\n\nIn Positron, you can also set your working directory by right-clicking a folder in the Files pane and choosing Set as Working Directory — no code required. This is often faster than typing setwd(), and it’s less error-prone since you’re pointing at a real folder rather than typing a path by hand."
+  },
+  {
+    "objectID": "arcs/session_1.html#four-basic-rules-for-writing-code",
+    "href": "arcs/session_1.html#four-basic-rules-for-writing-code",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Four Basic Rules for Writing Code",
+    "text": "Four Basic Rules for Writing Code\n\nUse # to annotate and document your code\nUse a visible pattern to separate sections, e.g. #----- Section Title ------#\nArithmetic works the way it does on paper\nLetters and words must be wrapped in quotation marks \" \" — object names are the exception"
+  },
+  {
+    "objectID": "arcs/session_1.html#arithmetic",
+    "href": "arcs/session_1.html#arithmetic",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Arithmetic",
+    "text": "Arithmetic\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRun Hello world! on its own, then run \"Hello world!\" in quotes.\n\n\n\n\n\n\nCaution🟠 Code Tour — Why does one of these fail?\n\n\n\n\n\nHello world!\nR reads this as an attempt to call an object named Hello — but Hello has never been created, and world! isn’t valid syntax here either. You’ll see an error like unexpected symbol. Wrapping it in quotes tells R “this is text, not code”:\n\"Hello world!\"\nError messages like this will come up constantly — learning to read them calmly is a core R skill, not a sign something’s gone wrong."
+  },
+  {
+    "objectID": "arcs/session_1.html#objects-and-assignment",
+    "href": "arcs/session_1.html#objects-and-assignment",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Objects and Assignment",
+    "text": "Objects and Assignment\nR stores information in objects using the assignment arrow &lt;-.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote🟣 Learn More — Object Naming Rules\n\n\n\n\n\n\nMust start with a letter (not a number or symbol)\nCan contain letters, numbers, _ and .\nCase-sensitive: age and Age are different objects\nAvoid names that are already functions in R (e.g. c, mean, data)"
+  },
+  {
+    "objectID": "arcs/session_1.html#data-types",
+    "href": "arcs/session_1.html#data-types",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Data Types",
+    "text": "Data Types\nR has a few core data types you’ll use constantly:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "arcs/session_1.html#vectors",
+    "href": "arcs/session_1.html#vectors",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Vectors",
+    "text": "Vectors\nA vector holds multiple values of the same type, built with c():\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nCaution🟠 Code Tour — Vectors Don’t Have to Be Numbers\n\n\n\n\n\nFamNames &lt;- c(\"Ana\", \"Ben\", \"Carla\", \"Dev\")\nis_adult  &lt;- c(TRUE, TRUE, TRUE, FALSE)\nA vector can hold character or logical values too — but every element inside one vector must be the same type. Try running c(1, \"two\", 3) and look closely at the result. What happened to the 1 and the 3?"
+  },
+  {
+    "objectID": "arcs/session_1.html#calling-functions",
+    "href": "arcs/session_1.html#calling-functions",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Calling Functions",
+    "text": "Calling Functions\nA function takes arguments (inputs) and returns a value (output). You’ve already called one — c(). Here are three more:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote⚪ About This — Why parentheses?\n\n\n\n\n\nParentheses tell R “run this now.” Typing mean alone just shows you the function’s underlying code — typing mean() actually executes it. This distinction matters more once you start writing your own functions, in Session 2."
+  },
+  {
+    "objectID": "arcs/session_1.html#building-your-first-data-frame",
+    "href": "arcs/session_1.html#building-your-first-data-frame",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Building Your First Data Frame",
+    "text": "Building Your First Data Frame\nA data frame is a table — rows and columns, like a spreadsheet. Let’s turn our family ages into one. Feel free to swap in your own numbers here instead of ours.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAdd a names column with cbind():\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nInspect it three ways:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote🟣 Learn More — head(), str(), and dim() each answer a different question\n\n\n\n\n\n\nhead() — “What does my data actually look like?”\nstr() — “What type is each column, and how is this object structured?”\ndim() — “How big is this — how many rows and columns?” You’ll run this same trio on almost every dataset you ever load into R, including the real genomics data later today."
+  },
+  {
+    "objectID": "arcs/session_1.html#break-10-minutes",
+    "href": "arcs/session_1.html#break-10-minutes",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "☕ Break (10 minutes)",
+    "text": "☕ Break (10 minutes)"
+  },
+  {
+    "objectID": "arcs/session_1.html#why-project-management-matters",
+    "href": "arcs/session_1.html#why-project-management-matters",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Why Project Management Matters",
+    "text": "Why Project Management Matters\nA consistent project structure means a collaborator — or you, six months from now — can open your folder and immediately understand what goes where, without asking you a single question."
+  },
+  {
+    "objectID": "arcs/session_1.html#create-an-r-project",
+    "href": "arcs/session_1.html#create-an-r-project",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Create an R Project",
+    "text": "Create an R Project\nIn Positron: File → New Folder from Project Template → R Project, or create a plain folder and open it in Positron as your working directory."
+  },
+  {
+    "objectID": "arcs/session_1.html#build-your-folder-structure",
+    "href": "arcs/session_1.html#build-your-folder-structure",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Build Your Folder Structure",
+    "text": "Build Your Folder Structure\n\ndir.create(\"raw_data\")\ndir.create(\"processed_data\")\ndir.create(\"scripts\")\ndir.create(\"outputs\")\n\n\n\n\nFolder\nPurpose\n\n\n\n\nraw_data/\nOriginal data. Never edit these files directly.\n\n\nprocessed_data/\nCleaned, transformed versions of your data.\n\n\nscripts/\nYour code.\n\n\noutputs/\nFigures, tables, and results.\n\n\n\n\n\n\n\n\n\nCaution🟠 Code Tour — File Naming Conventions\n\n\n\n\n\n\nNo spaces — use _ or - instead\nStart timestamped files with an ISO date: YYYY-MM-DD\nBe descriptive\n\nAvoid: - ❌ data analysis.R (spaces) - ❌ data.csv (not descriptive) - ❌ final_FINAL_really_final.R (version chaos)\nPrefer: - ✅ 2024-03-15_survey_analysis.R - ✅ participant_demographics_clean.csv - ✅ README.md"
+  },
+  {
+    "objectID": "arcs/session_1.html#initialize-renv",
+    "href": "arcs/session_1.html#initialize-renv",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Initialize renv",
+    "text": "Initialize renv\nrenv tracks exactly which package versions your project uses, so it runs the same way on any machine, including yours a year from now.\n\nrenv::init()\nrenv::snapshot()\n\nThis creates:\n├── .Rprofile\n├── renv.lock\n└── renv/\n    ├── .gitignore\n    ├── activate.R\n    ├── settings.json\n    └── library/\n\n\n\n\n\n\nNote🟣 Learn More — What’s actually inside renv.lock?\n\n\n\n\n\n{\n  \"R\": { \"Version\": \"4.6.0\" },\n  \"Packages\": {\n    \"dplyr\": {\n      \"Package\": \"dplyr\",\n      \"Version\": \"1.1.4\",\n      \"Source\": \"Repository\"\n    }\n  }\n}\nEvery package your project depends on gets pinned to an exact version here. When a collaborator runs renv::restore(), R installs these exact versions — not whatever happens to be newest that day. The full renv documentation is at rstudio.github.io/renv."
+  },
+  {
+    "objectID": "arcs/session_1.html#load-the-dataset",
+    "href": "arcs/session_1.html#load-the-dataset",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Load the Dataset",
+    "text": "Load the Dataset\nWe’ll use this dataset — real RNA-seq data from a published Shank3 mouse study — for the rest of the series.\n\n# ---- Download once, save locally ----\nmetadata_url  &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\"\nrawcounts_url &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\"\n\ndownload.file(metadata_url,  destfile = \"raw_data/GSE113754_filtered_metadata.csv\")\ndownload.file(rawcounts_url, destfile = \"raw_data/GSE113754_GeneLevel_Raw_data.csv\")\n\nmetadata  &lt;- read.csv(\"raw_data/GSE113754_filtered_metadata.csv\")\nrawcounts &lt;- read.csv(\"raw_data/GSE113754_GeneLevel_Raw_data.csv\")\n\n# ---- For browser-based students only: uncomment the lines below ----\n# metadata  &lt;- read.csv(\"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\")\n# rawcounts &lt;- read.csv(\"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\")\n\nInspect what you loaded:\n\nhead(metadata)\nstr(metadata)\ndim(rawcounts)\n\n\n\n\n\n\n\nNote⚪ About This — Why download-and-save here, but read-from-URL in the Code Tour below?\n\n\n\n\n\nThis isn’t an inconsistency — it’s intentional. In a real project, raw data should live inside your project folder (raw_data/) so your analysis doesn’t silently depend on the internet being available every time you run it. If the GitHub repo moves, is renamed, or GitHub has an outage, a project with a local copy still runs. A project that re-fetches a URL every time does not.\nBrowser-based tools like webR can’t save a persistent local copy the way a laptop can, so reading from the URL each time is the necessary workaround for that environment — not the ideal pattern. You’re seeing a real technical tradeoff, not a mistake.\n\n\n\n🟠 Code Tour — For browser-based students: you can still load and inspect the real dataset directly from its source, right here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "arcs/session_1.html#write-a-readme",
+    "href": "arcs/session_1.html#write-a-readme",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Write a README",
+    "text": "Write a README\n\ninstall.packages(\"fs\")\nlibrary(fs)\nfs::dir_tree()\ncapture.output(fs::dir_tree(), file = \"README.txt\")\n\nThen open README.txt and fill in the template:\nThis readme file was generated on [YYYY-MM-DD] by [NAME]\n\nGENERAL INFORMATION\n\nTitle of Dataset:\n\nAuthor/Principal Investigator Information\nName:\nORCID:\nInstitution:\nAddress:\nEmail:\n\nSHARING/ACCESS INFORMATION\n\nThis data was retrieved through the GREIN web platform, which\ninterfaces with the NIH Gene Expression Omnibus (GEO) repository.\nLink to dataset: https://www.ilincs.org/apps/grein/?gse=GSE113754\n\nDATA & FILE OVERVIEW\n\nraw_data/        — original data (never edited)\nprocessed_data/  — cleaned data\nscripts/         — analysis code\noutputs/         — figures, tables, results\n\n\n\n\n\n\nNote🟣 Learn More — README Templates\n\n\n\n\n\nThis project’s README is a simplified version of the Cornell Research Data Management README template: Cornell eCommons README Template\n\n\n\n\n\n\n\n\n\nNote⚪ About This — The project is the unit of reproducibility\n\n\n\n\n\nIt’s tempting to think of a single script as “the analysis.” But a script alone can’t be reproduced — it depends on data files, package versions, and a folder structure that has to exist for it to run. The project, not the script, is what makes your work reproducible: the folders, the renv.lock, the raw data, and the code together. If you zipped your project folder and sent it to a stranger, could they run it? That’s the real test."
+  },
+  {
+    "objectID": "arcs/session_1.html#what-we-did",
+    "href": "arcs/session_1.html#what-we-did",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "⚪ What We Did",
+    "text": "⚪ What We Did\nToday, you:\n\nWrote your first lines of R — arithmetic, objects, vectors, and functions\nBuilt your first data frame from scratch\nCreated a reproducible project with a standard folder structure\nInitialized renv to track your project’s dependencies\nLoaded a real genomics dataset you’ll use for the rest of this series\nWrote a README so someone else could understand your project"
+  },
+  {
+    "objectID": "arcs/session_1.html#why-we-did-it-this-way",
+    "href": "arcs/session_1.html#why-we-did-it-this-way",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Why We Did It This Way",
+    "text": "Why We Did It This Way\n\nLearn computational skills while establishing best practices\nThink about the future as you are forming habits\nDocument and automate iteratively\nGive your work collaborative potential\n\n…so reproducibility becomes how you work, not someone else’s checklist."
+  },
+  {
+    "objectID": "arcs/session_3.html",
+    "href": "arcs/session_3.html",
+    "title": "3. Data Transformation & Version Control",
+    "section": "",
+    "text": "Content coming soon."
+  },
+  {
+    "objectID": "arcs/arc_1.html",
+    "href": "arcs/arc_1.html",
+    "title": "Arc 1: R Fundamentals",
+    "section": "",
+    "text": "By the end of this arc, you will have written your first lines of R code, created objects and vectors, and built your first data frame.\n🔵 Slides: Open the Arc 1 Slides →",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#orient-to-positron",
+    "href": "arcs/arc_1.html#orient-to-positron",
+    "title": "Arc 1: R Fundamentals",
+    "section": "Orient to Positron",
+    "text": "Orient to Positron\nBefore writing any code, take a moment to locate four things in your Positron window:\n\nThe Console — where code runs and results appear\nThe Editor — where you write and save scripts\nThe Environment pane — where your objects (variables) appear once created\nThe Files pane — where you can see and navigate your project folder\n\nFind your working directory — the folder R considers “home” for this session:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote⚪ About This — Setting Your Working Directory Without Code\n\n\n\n\n\nIn Positron, you can also set your working directory by right-clicking a folder in the Files pane and choosing Set as Working Directory — no code required. This is often faster than typing setwd(), and it’s less error-prone since you’re pointing at a real folder rather than typing a path by hand.",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#four-basic-rules-for-writing-code",
+    "href": "arcs/arc_1.html#four-basic-rules-for-writing-code",
+    "title": "Arc 1: R Fundamentals",
+    "section": "Four Basic Rules for Writing Code",
+    "text": "Four Basic Rules for Writing Code\n\nUse # to annotate and document your code\nUse a visible pattern to separate sections, e.g. #----- Section Title ------#\nArithmetic works the way it does on paper\nLetters and words must be wrapped in quotation marks \" \" — object names are the exception",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#arithmetic",
+    "href": "arcs/arc_1.html#arithmetic",
+    "title": "Arc 1: R Fundamentals",
+    "section": "Arithmetic",
+    "text": "Arithmetic\nR evaluates arithmetic the way you’d expect from paper math:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nOne syntax rule worth knowing up front: text must be wrapped in quotation marks \" \" — object names are the only exception. Watch what happens when you “forget”. Run Hello world! on its own, then run \"Hello world!\" in quotes.\n\n\n\n\n\n\nCaution🟠 Code Tour — Why does one of these fail?\n\n\n\n\n\nHello world!\nR reads this as an attempt to call an object named Hello — but Hello has never been created, and world! isn’t valid syntax either. You’ll see an error like unexpected symbol. Wrapping it in quotes tells R “this is text, not code”:\n\"Hello world!\"\nError messages like this will come up constantly — learning to read them calmly is a core programming skill, not a sign something’s gone wrong.",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#objects-and-assignment",
+    "href": "arcs/arc_1.html#objects-and-assignment",
+    "title": "Arc 1: R Fundamentals",
+    "section": "Objects and Assignment",
+    "text": "Objects and Assignment\nR stores information in objects using the assignment arrow &lt;-.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nCaution🟠 Code Tour — Why Didn’t My Answer Update?\n\n\n\n\n\nChange my_age and re-run only that one line:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nbirth_year still shows the old value — because R doesn’t recalculate it automatically. It only stores what you told it to store, at the moment you ran that line. The variable has no memory of how it was created, only what it currently holds.\nThis is a small version of a problem that shows up everywhere in computational work: a pipeline is only as current as the last time each step was actually re-run. Changing one upstream value — a raw data point, a filtering threshold, a parameter — doesn’t automatically update everything downstream of it. You have to re-run the whole chain, in order, every time.\nThis is why, later in ARCS, you’ll get in the habit of re-running entire scripts top to bottom rather than just the last line you touched — and it’s part of why reproducibility isn’t only “did I get the right answer,” but “would I get the same answer again if I changed one thing and reran everything downstream of it?”\n\n\n\n\n\n\n\n\n\nNote🟣 Learn More — Object Naming Rules\n\n\n\n\n\n\nMust start with a letter (not a number or symbol)\nCan contain letters, numbers, _ and .\nCase-sensitive: age and Age are different objects\nAvoid names that are already functions in R (e.g. c, mean, data)",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#data-types",
+    "href": "arcs/arc_1.html#data-types",
+    "title": "Arc 1: R Fundamentals",
+    "section": "Data Types",
+    "text": "Data Types\nR has a few core data types you’ll use constantly:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#vectors",
+    "href": "arcs/arc_1.html#vectors",
+    "title": "Arc 1: R Fundamentals",
+    "section": "Vectors",
+    "text": "Vectors\nA vector holds multiple values of the same type, built with c():\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nCaution🟠 Code Tour — Vectors Don’t Have to Be Numbers\n\n\n\n\n\nFamNames &lt;- c(\"Ana\", \"Ben\", \"Carla\", \"Dev\")\nis_adult  &lt;- c(TRUE, TRUE, TRUE, FALSE)\nA vector can hold character or logical values too — but every element inside one vector must be the same type. Try running c(1, \"two\", 3) and look closely at the result. What happened to the 1 and the 3?",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#calling-functions",
+    "href": "arcs/arc_1.html#calling-functions",
+    "title": "Arc 1: R Fundamentals",
+    "section": "Calling Functions",
+    "text": "Calling Functions\nA function takes arguments (inputs) and returns a value (output). You’ve already called one — c(). Here are three more:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote⚪ About This — Why parentheses?\n\n\n\n\n\nParentheses tell R “run this now.” Typing mean alone just shows you the function’s underlying code — typing mean() actually executes it. This distinction matters more once you start writing your own functions, in Arc 3.",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#building-your-first-data-frame",
+    "href": "arcs/arc_1.html#building-your-first-data-frame",
+    "title": "Arc 1: R Fundamentals",
+    "section": "Building Your First Data Frame",
+    "text": "Building Your First Data Frame\nA data frame can be thought of as a table with rows and columns, like a spreadsheet. Data frames are composed of vectors in a certain order. Let’s turn our family ages into one. Feel free to swap in your own numbers here instead of ours.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAdd a names column with cbind():\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nInspect it three ways:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote🟣 Learn More — head(), str(), and dim() each answer a different question\n\n\n\n\n\n\nhead() — “What does my data actually look like?”\nstr() — “What type is each column, and how is this object structured?”\ndim() — “How big is this — how many rows and columns?” You’ll run this same trio on almost every dataset you ever load into R, including the real genomics data in the next arc.",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#break-10-minutes",
+    "href": "arcs/arc_1.html#break-10-minutes",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "☕ Break (10 minutes)",
+    "text": "☕ Break (10 minutes)",
+    "crumbs": [
+      "1. R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#why-project-management-matters",
+    "href": "arcs/arc_1.html#why-project-management-matters",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Why Project Management Matters",
+    "text": "Why Project Management Matters\nA consistent project structure means a collaborator — or you, six months from now — can open your folder and immediately understand what goes where, without asking you a single question.",
+    "crumbs": [
+      "1. R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#create-an-r-project",
+    "href": "arcs/arc_1.html#create-an-r-project",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Create an R Project",
+    "text": "Create an R Project\nIn Positron: File → New Folder from Project Template → R Project, or create a plain folder and open it in Positron as your working directory.",
+    "crumbs": [
+      "1. R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#build-your-folder-structure",
+    "href": "arcs/arc_1.html#build-your-folder-structure",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Build Your Folder Structure",
+    "text": "Build Your Folder Structure\n\ndir.create(\"raw_data\")\ndir.create(\"processed_data\")\ndir.create(\"scripts\")\ndir.create(\"outputs\")\n\n\n\n\nFolder\nPurpose\n\n\n\n\nraw_data/\nOriginal data. Never edit these files directly.\n\n\nprocessed_data/\nCleaned, transformed versions of your data.\n\n\nscripts/\nYour code.\n\n\noutputs/\nFigures, tables, and results.\n\n\n\n\n\n\n\n\n\nCaution🟠 Code Tour — File Naming Conventions\n\n\n\n\n\n\nNo spaces — use _ or - instead\nStart timestamped files with an ISO date: YYYY-MM-DD\nBe descriptive\n\nAvoid: - ❌ data analysis.R (spaces) - ❌ data.csv (not descriptive) - ❌ final_FINAL_really_final.R (version chaos)\nPrefer: - ✅ 2024-03-15_survey_analysis.R - ✅ participant_demographics_clean.csv - ✅ README.md",
+    "crumbs": [
+      "1. R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#initialize-renv",
+    "href": "arcs/arc_1.html#initialize-renv",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Initialize renv",
+    "text": "Initialize renv\nrenv tracks exactly which package versions your project uses, so it runs the same way on any machine, including yours a year from now.\n\nrenv::init()\nrenv::snapshot()\n\nThis creates:\n├── .Rprofile\n├── renv.lock\n└── renv/\n    ├── .gitignore\n    ├── activate.R\n    ├── settings.json\n    └── library/\n\n\n\n\n\n\nNote🟣 Learn More — What’s actually inside renv.lock?\n\n\n\n\n\n{\n  \"R\": { \"Version\": \"4.6.0\" },\n  \"Packages\": {\n    \"dplyr\": {\n      \"Package\": \"dplyr\",\n      \"Version\": \"1.1.4\",\n      \"Source\": \"Repository\"\n    }\n  }\n}\nEvery package your project depends on gets pinned to an exact version here. When a collaborator runs renv::restore(), R installs these exact versions — not whatever happens to be newest that day. The full renv documentation is at rstudio.github.io/renv.",
+    "crumbs": [
+      "1. R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#load-the-dataset",
+    "href": "arcs/arc_1.html#load-the-dataset",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Load the Dataset",
+    "text": "Load the Dataset\nWe’ll use this dataset — real RNA-seq data from a published Shank3 mouse study — for the rest of the series.\n\n# ---- Download once, save locally ----\nmetadata_url  &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\"\nrawcounts_url &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\"\n\ndownload.file(metadata_url,  destfile = \"raw_data/GSE113754_filtered_metadata.csv\")\ndownload.file(rawcounts_url, destfile = \"raw_data/GSE113754_GeneLevel_Raw_data.csv\")\n\nmetadata  &lt;- read.csv(\"raw_data/GSE113754_filtered_metadata.csv\")\nrawcounts &lt;- read.csv(\"raw_data/GSE113754_GeneLevel_Raw_data.csv\")\n\n# ---- For browser-based students only: uncomment the lines below ----\n# metadata  &lt;- read.csv(\"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\")\n# rawcounts &lt;- read.csv(\"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\")\n\nInspect what you loaded:\n\nhead(metadata)\nstr(metadata)\ndim(rawcounts)\n\n\n\n\n\n\n\nNote⚪ About This — Why download-and-save here, but read-from-URL in the Code Tour below?\n\n\n\n\n\nThis isn’t an inconsistency — it’s intentional. In a real project, raw data should live inside your project folder (raw_data/) so your analysis doesn’t silently depend on the internet being available every time you run it. If the GitHub repo moves, is renamed, or GitHub has an outage, a project with a local copy still runs. A project that re-fetches a URL every time does not.\nBrowser-based tools like webR can’t save a persistent local copy the way a laptop can, so reading from the URL each time is the necessary workaround for that environment — not the ideal pattern. You’re seeing a real technical tradeoff, not a mistake.\n\n\n\n🟠 Code Tour — For browser-based students: you can still load and inspect the real dataset directly from its source, right here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "1. R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#write-a-readme",
+    "href": "arcs/arc_1.html#write-a-readme",
+    "title": "Session 1 — R in a Reproducible Project",
+    "section": "Write a README",
+    "text": "Write a README\n\ninstall.packages(\"fs\")\nlibrary(fs)\nfs::dir_tree()\ncapture.output(fs::dir_tree(), file = \"README.txt\")\n\nThen open README.txt and fill in the template:\nThis readme file was generated on [YYYY-MM-DD] by [NAME]\n\nGENERAL INFORMATION\n\nTitle of Dataset:\n\nAuthor/Principal Investigator Information\nName:\nORCID:\nInstitution:\nAddress:\nEmail:\n\nSHARING/ACCESS INFORMATION\n\nThis data was retrieved through the GREIN web platform, which\ninterfaces with the NIH Gene Expression Omnibus (GEO) repository.\nLink to dataset: https://www.ilincs.org/apps/grein/?gse=GSE113754\n\nDATA & FILE OVERVIEW\n\nraw_data/        — original data (never edited)\nprocessed_data/  — cleaned data\nscripts/         — analysis code\noutputs/         — figures, tables, results\n\n\n\n\n\n\nNote🟣 Learn More — README Templates\n\n\n\n\n\nThis project’s README is a simplified version of the Cornell Research Data Management README template: Cornell eCommons README Template\n\n\n\n\n\n\n\n\n\nNote⚪ About This — The project is the unit of reproducibility\n\n\n\n\n\nIt’s tempting to think of a single script as “the analysis.” But a script alone can’t be reproduced — it depends on data files, package versions, and a folder structure that has to exist for it to run. The project, not the script, is what makes your work reproducible: the folders, the renv.lock, the raw data, and the code together. If you zipped your project folder and sent it to a stranger, could they run it? That’s the real test.",
+    "crumbs": [
+      "1. R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#what-we-did",
+    "href": "arcs/arc_1.html#what-we-did",
+    "title": "Arc 1: R Fundamentals",
+    "section": "⚪ What We Did",
+    "text": "⚪ What We Did\nIn this arc, you:\n\nWrote your first lines of R — arithmetic, objects, vectors, and functions\nLearned R’s core data types: character, numeric, and logical\nBuilt your first data frame from scratch",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#why-we-did-it-this-way",
+    "href": "arcs/arc_1.html#why-we-did-it-this-way",
+    "title": "Arc 1: R Fundamentals",
+    "section": "Why We Did It This Way",
+    "text": "Why We Did It This Way\n\nLearn computational skills while establishing best practices from the very first line of code\nBuild muscle memory for reading and writing R syntax before introducing project-level concepts\nTreat errors as expected, readable feedback — not failure",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_0.html",
+    "href": "arcs/arc_0.html",
+    "title": "Session 0: Before You Arrive",
+    "section": "",
+    "text": "If you can do only one thing before Session 1, do this: install R and Positron on your computer.\nEverything else we can help you with at the start of class.\nIf you can do more, great — the full setup instructions are below. The more you complete before arriving, the more you will get out of Session 1.\n\n\n\n\n\n\nImportant⚠️ Work or School Laptop?\n\n\n\nIf you are on a work or school-managed laptop, you may need administrator rights to install software. Test this before class by attempting to install R (Step 1 below).\nIf you do not have admin rights, contact your IT department before the workshop and ask them to install R, Positron, and GitHub Desktop. If that is not possible in time, you can still follow along using this website during Session 1 — and we will help you find a longer-term solution between sessions.\nDo not wait until class starts to discover this. It is the single most common setup problem we encounter."
+  },
+  {
+    "objectID": "arcs/arc_0.html#the-short-version",
+    "href": "arcs/arc_0.html#the-short-version",
+    "title": "Session 0: Before You Arrive",
+    "section": "",
+    "text": "If you can do only one thing before Session 1, do this: install R and Positron on your computer.\nEverything else we can help you with at the start of class.\nIf you can do more, great — the full setup instructions are below. The more you complete before arriving, the more you will get out of Session 1.\n\n\n\n\n\n\nImportant⚠️ Work or School Laptop?\n\n\n\nIf you are on a work or school-managed laptop, you may need administrator rights to install software. Test this before class by attempting to install R (Step 1 below).\nIf you do not have admin rights, contact your IT department before the workshop and ask them to install R, Positron, and GitHub Desktop. If that is not possible in time, you can still follow along using this website during Session 1 — and we will help you find a longer-term solution between sessions.\nDo not wait until class starts to discover this. It is the single most common setup problem we encounter."
+  },
+  {
+    "objectID": "arcs/arc_0.html#setup-steps",
+    "href": "arcs/arc_0.html#setup-steps",
+    "title": "Session 0: Before You Arrive",
+    "section": "Setup Steps",
+    "text": "Setup Steps\nComplete as many of these as you can before Session 1, in order. Stop wherever you get stuck and bring your questions to class — or reach out to us in advance using the contact information at the bottom of this page.\n\n\nStep 1: Install R\nR is the statistical computing language we will use throughout the series.\nWindows and Mac:\n\nGo to cran.r-project.org\nClick your operating system\nDownload the latest installer\nRun the installer using all default options\n\nWindows only — also install Rtools:\nAfter installing R, go to the Rtools page on CRAN and download the version that matches your R installation (e.g., Rtools44 for R 4.4). Run the installer using default options.\nMac only — also install Command Line Tools:\nOpen the Terminal application (search for “Terminal” in Spotlight) and run:\nxcode-select --install\nA dialog box will appear — click Install and follow the prompts.\n\n\n\n\n\n\nNote\n\n\n\n📘 About This: Why Both R and Rtools/Command Line Tools?\nR is the language. Rtools (Windows) and Command Line Tools (Mac) are compilers that allow R to build certain packages from source code — including several packages we use in this series. You will not interact with them directly, but R needs them to be present.\n\n\nStep 2: Create a GitHub Account\nGitHub is where we will store and share our work. You will need a free account.\nGo to github.com and click Sign up\nEnter your email address, create a password, and choose a username\nVerify your account using the code GitHub sends to your email\nYou can skip the personalization questions at the end\nKeep a note of your username and password — you will need them in Step 3. Step 3: Install GitHub Desktop\nGitHub Desktop is a visual application that makes it easier to work with Git and GitHub without using the command line.\nWindows:\nGo to desktop.github.com\nClick Download for Windows (64-bit)\nRun the downloaded .exe file — it will install and open automatically\nSign in with the GitHub account you created in Step 2\nMac:\nGo to desktop.github.com\nClick Download for macOS\nOpen the downloaded .zip file — this extracts the GitHub Desktop app\nDrag GitHub Desktop into your Applications folder\nOpen it from Applications and sign in with your GitHub account\nStep 4: Get the Course Data\nWe will use the same dataset throughout the series. Clone the course data repository using GitHub Desktop:\nMake sure GitHub Desktop is open and you are signed in\nVisit this URL in your browser: https://github.com/CWML/arcs-data\nClick the green Code button\nSelect Open with GitHub Desktop\nWhen GitHub Desktop opens, choose a location you can find easily (Desktop or Documents) and click Clone\nThis downloads a folder called arcs-data containing the two data files we will use. You do not need to do anything else with this folder yet — we will use it in Session 1.\n\n\n\n\n\n\nNote\n\n\n\n📘 About This: Why Clone Instead of Just Downloading?\nWe clone the data repository rather than downloading a zip file so that you practice the same workflow you will use throughout the series. Cloning also makes it easy to get any updates we push before future sessions.\n\n\nStep 5: Install Positron\nPositron is the IDE (integrated development environment) we will use to write and run R code. It was built by Posit specifically for data science work.\nGo to the Positron releases page on GitHub\nFind the most recent stable release\nUnder Assets, download the installer for your operating system:\n    Windows: .exe file\n    Mac: .dmg file\nRun the installer\nOpen Positron — it should automatically detect your R installation and show R in the bottom right corner\n\n\n\n\n\n\nImportant\n\n\n\n⚠️ Watch Out\nIf Positron does not detect R automatically, go to Settings → R and point it to your R installation manually. On Mac this is usually /usr/local/bin/R or /opt/homebrew/bin/R. On Windows it is usually C:Files-4.x.x.exe.\n\n\nStep 6: Open the Course Repository in Positron\nOnce Positron is installed:\nOpen Positron\nGo to File → Open Folder\nNavigate to the arcs-data folder you cloned in Step 4\nClick Open\nPositron will restart in project mode. You should see the folder contents in the file explorer panel on the left."
+  },
+  {
+    "objectID": "arcs/arc_0.html#what-to-expect-at-the-start-of-session-1",
+    "href": "arcs/arc_0.html#what-to-expect-at-the-start-of-session-1",
+    "title": "Session 0: Before You Arrive",
+    "section": "What to Expect at the Start of Session 1",
+    "text": "What to Expect at the Start of Session 1\nHere is what will happen:\nThe first 15–20 minutes of Session 1 are reserved for setup\nIf you have everything installed, there will be a short warm-up task to work on while others finish setup\nIf you are still installing or troubleshooting, follow the steps above with help from the instructors\nIf you are blocked by an admin rights issue or a persistent error, open this website on your laptop — you can follow along with everything we do in Session 1 from here, and we will help you sort out your local environment between sessions\nNo one gets left behind. Setup problems are a normal part of working with research software, and troubleshooting them is itself a skill we will build together."
+  },
+  {
+    "objectID": "arcs/arc_0.html#need-help-before-class",
+    "href": "arcs/arc_0.html#need-help-before-class",
+    "title": "Session 0: Before You Arrive",
+    "section": "Need Help Before Class?",
+    "text": "Need Help Before Class?\nIf you hit a wall during setup, reach out to us before the workshop:\nLevi Dolan: levi.dolan@yale.edu\nMax Wegener: maximilian.wegener@yale.edu\nSofia Fertuzinhos: sofia.fertuzinhos@yale.edu\nJustin DeMayo: justin.demayo@yale.edu\nYou can also come at 9:00 AM on the day of Session 1 — we will be there early and happy to help."
+  },
+  {
+    "objectID": "arcs/arc_2.html",
+    "href": "arcs/arc_2.html",
+    "title": "Arc 2: Your First Reproducible Project",
+    "section": "",
+    "text": "By the end of this arc, you will have created a reproducible project and loaded a real dataset that we’ll use for the rest of the series.\n🔵 Slides: Open the Arc 2 Slides →",
+    "crumbs": [
+      "Arc 2: Your First Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_2.html#why-project-management-matters",
+    "href": "arcs/arc_2.html#why-project-management-matters",
+    "title": "Arc 2: Your First Reproducible Project",
+    "section": "Why Project Management Matters",
+    "text": "Why Project Management Matters\nA consistent project structure means a collaborator — or you, six months from now — can open your folder and immediately understand what goes where, without asking you a single question. This is one piece of what we mean by reproducibility\n\n\n\n\n\n\nImportant🔴 For Browser-Based Students\n\n\n\n\n\nThe folder structure, renv, and README steps below require a persistent filesystem — something a browser sandbox can’t provide. Directories created in webR exist only for this page session and disappear on refresh.\nRead through these steps to understand why a reproducible project needs them, but you’ll need a local R install (Positron or RStudio) to actually build and keep a project folder. The dataset-loading steps further down do work live in your browser, since they don’t depend on anything being saved.",
+    "crumbs": [
+      "Arc 2: Your First Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_2.html#create-an-r-project",
+    "href": "arcs/arc_2.html#create-an-r-project",
+    "title": "Arc 2: Your First Reproducible Project",
+    "section": "Create an R Project",
+    "text": "Create an R Project\nIn Positron: File → New Folder from Project Template → R Project, or create a plain folder and open it in Positron as your working directory.",
+    "crumbs": [
+      "Arc 2: Your First Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_2.html#build-your-folder-structure",
+    "href": "arcs/arc_2.html#build-your-folder-structure",
+    "title": "Arc 2: Your First Reproducible Project",
+    "section": "Build Your Folder Structure",
+    "text": "Build Your Folder Structure\n\ndir.create(\"raw_data\")\ndir.create(\"processed_data\")\ndir.create(\"scripts\")\ndir.create(\"outputs\")\n\n\n\n\nFolder\nPurpose\n\n\n\n\nraw_data/\nOriginal data. Never edit these files directly.\n\n\nprocessed_data/\nCleaned, transformed versions of your data.\n\n\nscripts/\nYour code.\n\n\noutputs/\nFigures, tables, and results.\n\n\n\n\n\n\n\n\n\nCaution🟠 Code Tour — File Naming Conventions\n\n\n\n\n\n\nNo spaces — use _ or - instead\nStart timestamped files with an ISO date: YYYY-MM-DD\nBe descriptive\n\nAvoid: - ❌ data analysis.R (spaces) - ❌ data.csv (not descriptive) - ❌ final_FINAL_really_final.R (version chaos)\nPrefer: - ✅ 2024-03-15_survey_analysis.R - ✅ participant_demographics_clean.csv - ✅ README.md",
+    "crumbs": [
+      "Arc 2: Your First Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_2.html#initialize-renv",
+    "href": "arcs/arc_2.html#initialize-renv",
+    "title": "Arc 2: Your First Reproducible Project",
+    "section": "Initialize renv",
+    "text": "Initialize renv\nrenv tracks exactly which package versions your project uses, so it runs the same way on any machine, including yours a year from now.\n\nrenv::init()\nrenv::snapshot()\n\nThis creates:\n├── .Rprofile\n├── renv.lock\n└── renv/\n    ├── .gitignore\n    ├── activate.R\n    ├── settings.json\n    └── library/\n\n\n\n\n\n\nNote🟣 Learn More — What’s actually inside renv.lock?\n\n\n\n\n\n{\n  \"R\": { \"Version\": \"4.6.0\" },\n  \"Packages\": {\n    \"dplyr\": {\n      \"Package\": \"dplyr\",\n      \"Version\": \"1.1.4\",\n      \"Source\": \"Repository\"\n    }\n  }\n}\nEvery package your project depends on gets pinned to an exact version here. When a collaborator runs renv::restore(), R installs these exact versions — not whatever happens to be newest that day. The full renv documentation is at rstudio.github.io/renv.",
+    "crumbs": [
+      "Arc 2: Your First Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_2.html#load-the-dataset",
+    "href": "arcs/arc_2.html#load-the-dataset",
+    "title": "Arc 2: Your First Reproducible Project",
+    "section": "Load the Dataset",
+    "text": "Load the Dataset\nWe’ll use this dataset — real RNA-seq data from a published Shank3 mouse study — for the rest of the series.\n\n# ---- Download once, save locally ----\nmetadata_url  &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\"\nrawcounts_url &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\"\n\ndownload.file(metadata_url,  destfile = \"raw_data/GSE113754_filtered_metadata.csv\")\ndownload.file(rawcounts_url, destfile = \"raw_data/GSE113754_GeneLevel_Raw_data.csv\")\n\nmetadata  &lt;- read.csv(\"raw_data/GSE113754_filtered_metadata.csv\")\nrawcounts &lt;- read.csv(\"raw_data/GSE113754_GeneLevel_Raw_data.csv\")\n\n# ---- For browser-based students only: uncomment the lines below ----\n# metadata  &lt;- read.csv(\"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\")\n# rawcounts &lt;- read.csv(\"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\")\n\nInspect what you loaded:\n\nhead(metadata)\nstr(metadata)\ndim(rawcounts)\n\n\n\n\n\n\n\nNote⚪ About This — Why download-and-save here, but read-from-URL in the Code Tour below?\n\n\n\n\n\nThis isn’t an inconsistency — it’s intentional. In a real project, raw data should live inside your project folder (raw_data/) so your analysis doesn’t silently depend on the internet being available every time you run it. If the GitHub repo moves, is renamed, or GitHub has an outage, a project with a local copy still runs. A project that re-fetches a URL every time does not.\nBrowser-based tools like webR can’t save a persistent local copy the way a laptop can, so reading from the URL each time is the necessary workaround for that environment — not the ideal pattern. You’re seeing a real technical tradeoff, not a mistake.\n\n\n\n🟠 Code Tour — For browser-based students: you can still load and inspect the real dataset directly from its source, right here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Arc 2: Your First Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_2.html#write-a-readme",
+    "href": "arcs/arc_2.html#write-a-readme",
+    "title": "Arc 2: Your First Reproducible Project",
+    "section": "Write a README",
+    "text": "Write a README\n\ninstall.packages(\"fs\")\nlibrary(fs)\nfs::dir_tree()\ncapture.output(fs::dir_tree(), file = \"README.txt\")\n\nThen open README.txt and fill in the template:\nThis readme file was generated on [YYYY-MM-DD] by [NAME]\n\nGENERAL INFORMATION\n\nTitle of Dataset:\n\nAuthor/Principal Investigator Information\nName:\nORCID:\nInstitution:\nAddress:\nEmail:\n\nSHARING/ACCESS INFORMATION\n\nThis data was retrieved through the GREIN web platform, which\ninterfaces with the NIH Gene Expression Omnibus (GEO) repository.\nLink to dataset: https://www.ilincs.org/apps/grein/?gse=GSE113754\n\nDATA & FILE OVERVIEW\n\nraw_data/        — original data (never edited)\nprocessed_data/  — cleaned data\nscripts/         — analysis code\noutputs/         — figures, tables, results\n\n\n\n\n\n\nNote🟣 Learn More — README Templates\n\n\n\n\n\nThis project’s README is a simplified version of the Cornell Research Data Management README template: Cornell eCommons README Template\n\n\n\n\n\n\n\n\n\nNote⚪ About This — The project is the unit of reproducibility\n\n\n\n\n\nIt’s tempting to think of a single script as “the analysis.” But a script alone can’t be reproduced — it depends on data files, package versions, and a folder structure that has to exist for it to run. The project, not the script, is what makes your work reproducible: the folders, the renv.lock, the raw data, and the code together. If you zipped your project folder and sent it to a stranger, could they run it? That’s the real test.",
+    "crumbs": [
+      "Arc 2: Your First Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_2.html#what-we-did",
+    "href": "arcs/arc_2.html#what-we-did",
+    "title": "Arc 2: Your First Reproducible Project",
+    "section": "⚪ What We Did",
+    "text": "⚪ What We Did\nIn this arc, you:\n\nCreated a reproducible project with a standard folder structure\nInitialized renv to track your project’s dependencies\nLoaded a real genomics dataset you’ll use for the rest of this series\nWrote a README so someone else could understand your project",
+    "crumbs": [
+      "Arc 2: Your First Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_2.html#why-we-did-it-this-way",
+    "href": "arcs/arc_2.html#why-we-did-it-this-way",
+    "title": "Arc 2: Your First Reproducible Project",
+    "section": "Why We Did It This Way",
+    "text": "Why We Did It This Way\n\nThink about the future as you are forming habits\nDocument and automate iteratively\nGive your work collaborative potential\n\n…so reproducibility becomes how you work, not someone else’s checklist.",
+    "crumbs": [
+      "Arc 2: Your First Reproducible Project"
+    ]
+  },
+  {
+    "objectID": "arcs/arc_1.html#two-basic-rules-for-writing-reproducible-code",
+    "href": "arcs/arc_1.html#two-basic-rules-for-writing-reproducible-code",
+    "title": "Arc 1: R Fundamentals",
+    "section": "Two Basic Rules for Writing Reproducible Code",
+    "text": "Two Basic Rules for Writing Reproducible Code\n\nUse # to annotate and document your code. A comment explains why you did something, not just what the code does — that’s the difference between code you can hand to someone else and code only you can decode.\nUse a visible pattern to separate sections, e.g. #----- Section Title ------#. This turns a script into something a collaborator — or you, in six months — can scan and navigate without reading every line.\n\nThese two habits are the first, smallest form of reproducibility: a reader who wasn’t there when you wrote the code should still be able to follow your thinking.",
+    "crumbs": [
+      "Arc 1: R Fundamentals"
+    ]
+  },
+  {
+    "objectID": "arcs/glossary.html",
+    "href": "arcs/glossary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "Short definitions of terms used across ARCS, with links back to where each one is taught and out to fuller references.\n\nArgument\nA value passed into a function when it is called — the function’s input. → Arc 1 · Advanced R: Functions\n\n\nAssignment Operator\n&lt;-, used to store a value in an object. Read it as “gets” — x &lt;- 5 means “x gets 5.” → Arc 1\n\n\nData Frame\nA table-like object in R — rows and columns, similar to a spreadsheet. → Arc 1 · R for Data Science: Data Frames\n\n\nData Type\nThe kind of value an object holds — numeric, character, or logical. Determines what operations R will let you perform on it. → Arc 1 · R Language Definition\n\n\nFunction\nA reusable block of code that takes arguments (inputs) and returns a value (output). → Arc 1 · Advanced R: Functions\n\n\nObject\nA named value stored in R’s environment, created with the assignment operator &lt;-. → Arc 1\n\n\nR Project\nA folder that Positron/RStudio treats as a self-contained working directory, keeping file paths and settings local to that project rather than scattered across your computer. → Arc 2\n\n\nREADME\nA plain-text file describing what a project contains and how to use it, so a collaborator — or future you — doesn’t have to guess. → Arc 2 · Cornell README Template\n\n\nrenv\nAn R package that locks the exact version of every package a project uses, so the project runs identically on any machine, including yours a year from now. → Arc 2 · renv documentation\n\n\nReproducibility\nThe property of a project, script, or pipeline producing the same result every time it’s re-run — including after changes to upstream data, parameters, or package versions. → Arc 1: Code Tour · Arc 2 · The Turing Way: Definitions\n\n\nVector\nA collection of values of the same data type, created with c(). → Arc 1\n\n\nWorking Directory\nThe folder R treats as “home” for a session — where it looks for files by default, and where relative file paths are measured from. → Arc 1"
+  },
+  {
+    "objectID": "glossary.html",
+    "href": "glossary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "Short definitions of terms used across ARCS, with links back to where each one is taught and out to fuller references.\n\nArgument\nA value passed into a function when it is called — the function’s input. → Arc 1 · Advanced R: Functions\n\n\nAssignment Operator\n&lt;-, used to store a value in an object. Read it as “gets” — x &lt;- 5 means “x gets 5.” → Arc 1\n\n\nData Frame\nA table-like object in R — rows and columns, similar to a spreadsheet. → Arc 1 · R for Data Science: Data Frames\n\n\nData Type\nThe kind of value an object holds — numeric, character, or logical. Determines what operations R will let you perform on it. → Arc 1 · R Language Definition\n\n\nFunction\nA reusable block of code that takes arguments (inputs) and returns a value (output). → Arc 1 · Advanced R: Functions\n\n\nObject\nA named value stored in R’s environment, created with the assignment operator &lt;-. → Arc 1\n\n\nR Project\nA folder that Positron/RStudio treats as a self-contained working directory, keeping file paths and settings local to that project rather than scattered across your computer. → Arc 2\n\n\nREADME\nA plain-text file describing what a project contains and how to use it, so a collaborator — or future you — doesn’t have to guess. → Arc 2 · Cornell README Template\n\n\nrenv\nAn R package that locks the exact version of every package a project uses, so the project runs identically on any machine, including yours a year from now. → Arc 2 · renv documentation\n\n\nReproducibility\nThe property of a project, script, or pipeline producing the same result every time it’s re-run — including after changes to upstream data, parameters, or package versions. → Arc 1: Code Tour · Arc 2 · The Turing Way: Definitions\n\n\nVector\nA collection of values of the same data type, created with c(). → Arc 1\n\n\nWorking Directory\nThe folder R treats as “home” for a session — where it looks for files by default, and where relative file paths are measured from. → Arc 1"
   }
 ]

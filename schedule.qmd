@@ -12,17 +12,15 @@ title-block-style: default
 **Format:** Four sessions, weekly, 9:00 AM – 12:00 PM  
 **Instructors:** Levi Dolan, Sofia Fertuzinhos, Max Wegener, Justin DeMayo
 
-Before the first session, complete the [pre-workshop setup](session_0.qmd).
+Before the first session, complete the [pre-workshop setup](arcs/arc_0.qmd).
 
 ---
 
 | Session | Date | Topic | Materials |
 |---|---|---|---|
-| Session 1 | [date] | R in a Reproducible Project | [Session 1](sessions/session_1.qmd) |
-| Session 2 | [date] | Control Flow, Functions & Documents | [Session 2](sessions/session_2.qmd) |
-| Session 3 | [date] | Data Transformation & Version Control | [Session 3](sessions/session_3.qmd) |
-| Session 4 | [date] | Pipelines, Environments & AI | [Session 4](sessions/session_4.qmd) |
-
+| Session 1 | [date] | 
+| Session 2 | [date] | 
+| 
 ---
 
 ::: {.callout-note icon="false"}

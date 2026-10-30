@@ -11,21 +11,35 @@ website:
   description: "Advancing Reproducibility with Computational Skills"
 
   navbar:
+    logo: images/arcs-logo.svg
+    title: false
     left:
+      - text: "ARCS"
+        menu:
+          - text: "Arc 1: R Fundamentals"
+            href: arcs/arc_1.qmd
+          - text: "Arc 2: Your First Reproducible Project"
+            href: arcs/arc_2.qmd
+          - text: "Arc 3: Data Structures"
+            href: arcs/arc_3.qmd
+          - text: "Arc 4: Reproducible Reports"
+            href: arcs/arc_4.qmd
+          - text: "Arc 5: Tidyverse"
+            href: arcs/arc_5.qmd
+          - text: "Arc 6: Git & GitHub"
+            href: arcs/arc_6.qmd
+          - text: "Arc 7: DESeq2 Pipeline"
+            href: arcs/arc_7.qmd
+          - text: "Arc 8: Apptainer & Containers"
+            href: arcs/arc_8.qmd
+      - text: "About"
+        href: index.qmd
       - text: "Schedule"
         href: schedule.qmd
       - text: "Setup"
-        href: session_0.qmd
-      - text: "Sessions"
-        menu:
-          - text: "1. R in a Reproducible Project"
-            href: sessions/session_1.qmd
-          - text: "2. Control Flow, Functions, & Documents"
-            href: sessions/session_2.qmd
-          - text: "3. Data Transformation & Version Control"
-            href: sessions/session_3.qmd
-          - text: "4. Pipelines, Environments, & AI"
-            href: sessions/session_4.qmd
+        href: arcs/arc_0.qmd
+      - text: "Glossary"
+        href: glossary.qmd
       - text: "Archive"
         href: archive/index.qmd
     right:
@@ -33,19 +47,27 @@ website:
         href: https://github.com/CWML/ARCS
 
   sidebar:
-    - id: sessions
-      title: "Sessions"
+    - id: arcs
+      title: "Arcs"
       style: "docked"
       background: light
       contents:
-            - text: "1. R in a Reproducible Project"
-              href: sessions/session_1.qmd
-            - text: "2. Control Flow, Functions, & Documents"
-              href: sessions/session_2.qmd
-            - text: "3. Data Transformation & Version Control"
-              href: sessions/session_3.qmd
-            - text: "4. Pipelines, Environments, & AI"
-              href: sessions/session_4.qmd
+        - text: "Arc 1: R Fundamentals"
+          href: arcs/arc_1.qmd
+        - text: "Arc 2: Your First Reproducible Project"
+          href: arcs/arc_2.qmd
+        - text: "Arc 3: Data Structures"
+          href: arcs/arc_3.qmd
+        - text: "Arc 4: Reproducible Reports"
+          href: arcs/arc_4.qmd
+        - text: "Arc 5: Tidyverse"
+          href: arcs/arc_5.qmd
+        - text: "Arc 6: Git & GitHub"
+          href: arcs/arc_6.qmd
+        - text: "Arc 7: DESeq2 Pipeline"
+          href: arcs/arc_7.qmd
+        - text: "Arc 8: Apptainer & Containers"
+          href: arcs/arc_8.qmd
 
   page-footer:
     left: "ARCS Workshop Series"
@@ -55,6 +77,8 @@ format:
   html:
     include-in-header:
       - _includes/google_analytics.html
+    include-after-body:
+      - _includes/instructor_toggle.html
     theme:
       - cosmo
       - brand

@@ -1,0 +1,226 @@
+---
+title: "Arc 2: Your First Reproducible Project"
+subtitle: "Folder structure, renv, loading real data, README"
+engine: knitr
+filters:
+  - webr
+webr:
+  cell-options:
+    reset-button: true
+---
+
+By the end of this arc, you will have created a reproducible project and loaded a real dataset that we'll use for the rest of the series.
+
+🔵 **Slides:** [Open the Arc 2 Slides →](/arcs/arc_2_slides.html)
+
+## Why Project Management Matters
+
+A consistent project structure means a collaborator — or you, six months from now — can open your folder and immediately understand what goes where, without asking you a single question. This is one piece of what we mean by **[reproducibility](/glossary.qmd#reproducibility)**
+
+::: {.callout-important collapse="true"}
+## 🔴 For Browser-Based Students
+The folder structure, `renv`, and README steps below require a persistent
+filesystem — something a browser sandbox can't provide. Directories created
+in webR exist only for this page session and disappear on refresh.
+
+Read through these steps to understand *why* a reproducible project needs
+them, but you'll need a local R install (Positron or RStudio) to actually
+build and keep a project folder. The dataset-loading steps further down
+*do* work live in your browser, since they don't depend on anything
+being saved.
+:::
+
+## Create an R Project
+
+In Positron: **File → New Folder from Project Template → [R Project](/glossary.qmd#r-project)**, or create a plain folder and open it in Positron as your working directory.
+
+## Build Your Folder Structure
+
+```{r}
+#| eval: false
+dir.create("raw_data")
+dir.create("processed_data")
+dir.create("scripts")
+dir.create("outputs")
+```
+
+| Folder | Purpose |
+|---|---|
+| `raw_data/` | Original data. Never edit these files directly. |
+| `processed_data/` | Cleaned, transformed versions of your data. |
+| `scripts/` | Your code. |
+| `outputs/` | Figures, tables, and results. |
+
+::: {.callout-caution collapse="true"}
+## 🟠 Code Tour — File Naming Conventions
+- No spaces — use `_` or `-` instead
+- Start timestamped files with an ISO date: `YYYY-MM-DD`
+- Be descriptive
+
+**Avoid:**
+- ❌ `data analysis.R` (spaces)
+- ❌ `data.csv` (not descriptive)
+- ❌ `final_FINAL_really_final.R` (version chaos)
+
+**Prefer:**
+- ✅ `2024-03-15_survey_analysis.R`
+- ✅ `participant_demographics_clean.csv`
+- ✅ `README.md`
+:::
+
+## Initialize `renv`
+
+[renv](/glossary.qmd#renv) tracks exactly which package versions your project uses, so it runs the same way on any machine, including yours a year from now.
+
+```{r}
+#| eval: false
+renv::init()
+renv::snapshot()
+```
+
+This creates:
+
+```
+├── .Rprofile
+├── renv.lock
+└── renv/
+    ├── .gitignore
+    ├── activate.R
+    ├── settings.json
+    └── library/
+```
+
+::: {.callout-note collapse="true"}
+## 🟣 Learn More — What's actually inside renv.lock?
+```json
+{
+  "R": { "Version": "4.6.0" },
+  "Packages": {
+    "dplyr": {
+      "Package": "dplyr",
+      "Version": "1.1.4",
+      "Source": "Repository"
+    }
+  }
+}
+```
+Every package your project depends on gets pinned to an exact version here. When a collaborator runs `renv::restore()`, R installs these exact versions — not whatever happens to be newest that day. The full `renv` documentation is at [rstudio.github.io/renv](https://rstudio.github.io/renv/).
+:::
+
+## Load the Dataset
+
+We'll use this dataset — real RNA-seq data from a published Shank3 mouse study — for the rest of the series.
+
+```{r}
+#| eval: false
+# ---- Download once, save locally ----
+metadata_url  <- "https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv"
+rawcounts_url <- "https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv"
+
+download.file(metadata_url,  destfile = "raw_data/GSE113754_filtered_metadata.csv")
+download.file(rawcounts_url, destfile = "raw_data/GSE113754_GeneLevel_Raw_data.csv")
+
+metadata  <- read.csv("raw_data/GSE113754_filtered_metadata.csv")
+rawcounts <- read.csv("raw_data/GSE113754_GeneLevel_Raw_data.csv")
+
+# ---- For browser-based students only: uncomment the lines below ----
+# metadata  <- read.csv("https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv")
+# rawcounts <- read.csv("https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv")
+```
+
+Inspect what you loaded:
+
+```{r}
+#| eval: false
+head(metadata)
+str(metadata)
+dim(rawcounts)
+```
+
+::: {.callout-note collapse="true"}
+## ⚪ About This — Why download-and-save here, but read-from-URL in the Code Tour below?
+This isn't an inconsistency — it's intentional. In a real project, raw data should live inside your project folder (`raw_data/`) so your analysis doesn't silently depend on the internet being available every time you run it. If the GitHub repo moves, is renamed, or GitHub has an outage, a project with a local copy still runs. A project that re-fetches a URL every time does not.
+
+Browser-based tools like webR can't save a persistent local copy the way a laptop can, so reading from the URL each time is the necessary workaround for that environment — not the ideal pattern. You're seeing a real technical tradeoff, not a mistake.
+:::
+
+🟠 **Code Tour — For browser-based students:** you can still load and inspect the real dataset directly from its source, right here:
+
+```{webr-r}
+metadata <- read.csv("https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv")
+head(metadata)
+```
+
+```{webr-r}
+rawcounts <- read.csv("https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv")
+dim(rawcounts)
+```
+
+## Write a **[README](/glossary.qmd#readme)**
+
+```{r}
+#| eval: false
+install.packages("fs")
+library(fs)
+fs::dir_tree()
+capture.output(fs::dir_tree(), file = "README.txt")
+```
+
+Then open `README.txt` and fill in the template:
+
+```
+This readme file was generated on [YYYY-MM-DD] by [NAME]
+
+GENERAL INFORMATION
+
+Title of Dataset:
+
+Author/Principal Investigator Information
+Name:
+ORCID:
+Institution:
+Address:
+Email:
+
+SHARING/ACCESS INFORMATION
+
+This data was retrieved through the GREIN web platform, which
+interfaces with the NIH Gene Expression Omnibus (GEO) repository.
+Link to dataset: https://www.ilincs.org/apps/grein/?gse=GSE113754
+
+DATA & FILE OVERVIEW
+
+raw_data/        — original data (never edited)
+processed_data/  — cleaned data
+scripts/         — analysis code
+outputs/         — figures, tables, results
+```
+
+::: {.callout-note collapse="true"}
+## 🟣 Learn More — README Templates
+This project's README is a simplified version of the Cornell Research Data Management README template: [Cornell eCommons README Template](https://ecommons.cornell.edu/entities/publication/6effe964-798e-4c21-aac2-4194709ff230)
+:::
+
+::: {.callout-note collapse="true"}
+## ⚪ About This — The project is the unit of reproducibility
+It's tempting to think of a single script as "the analysis." But a script alone can't be reproduced — it depends on data files, package versions, and a folder structure that has to exist for it to run. The **project**, not the script, is what makes your work reproducible: the folders, the `renv.lock`, the raw data, and the code together. If you zipped your project folder and sent it to a stranger, could they run it? That's the real test.
+:::
+
+---
+
+## ⚪ What We Did
+
+In this arc, you:
+
+- Created a reproducible project with a standard folder structure
+- Initialized renv to track your project's dependencies
+- Loaded a real genomics dataset you'll use for the rest of this series
+- Wrote a README so someone else could understand your project
+
+## Why We Did It This Way
+
+- Think about the future as you are forming habits
+- Document and automate iteratively
+- Give your work collaborative potential
+
+...so reproducibility becomes how you work, not someone else's checklist.
