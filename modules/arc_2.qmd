@@ -11,7 +11,11 @@ webr:
 
 By the end of this arc, you will have created a reproducible project and loaded a real dataset that we'll use for the rest of the series.
 
-🔵 **Slides:** [Open the Arc 2 Slides →](/arcs/arc_2_slides.html)
+🔵 **Slides:** 
+
+[Open slides fullscreen](arc_2_slides.html){target="_blank"}
+
+<iframe src="arc_2_slides.html" width="100%" height="500px" style="border:none;"></iframe>
 
 ## Why Project Management Matters
 

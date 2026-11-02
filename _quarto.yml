@@ -17,27 +17,27 @@ website:
       - text: "ARCS"
         menu:
           - text: "Arc 1: R Fundamentals"
-            href: arcs/arc_1.qmd
+            href: modules/arc_1.qmd
           - text: "Arc 2: Your First Reproducible Project"
-            href: arcs/arc_2.qmd
+            href: modules/arc_2.qmd
           - text: "Arc 3: Data Structures"
-            href: arcs/arc_3.qmd
+            href: modules/arc_3.qmd
           - text: "Arc 4: Reproducible Reports"
-            href: arcs/arc_4.qmd
+            href: modules/arc_4.qmd
           - text: "Arc 5: Tidyverse"
-            href: arcs/arc_5.qmd
+            href: modules/arc_5.qmd
           - text: "Arc 6: Git & GitHub"
-            href: arcs/arc_6.qmd
+            href: modules/arc_6.qmd
           - text: "Arc 7: DESeq2 Pipeline"
-            href: arcs/arc_7.qmd
+            href: modules/arc_7.qmd
           - text: "Arc 8: Apptainer & Containers"
-            href: arcs/arc_8.qmd
+            href: modules/arc_8.qmd
       - text: "About"
         href: index.qmd
       - text: "Schedule"
         href: schedule.qmd
       - text: "Setup"
-        href: arcs/arc_0.qmd
+        href: modules/arc_0.qmd
       - text: "Glossary"
         href: glossary.qmd
       - text: "Archive"
@@ -47,27 +47,27 @@ website:
         href: https://github.com/CWML/ARCS
 
   sidebar:
-    - id: arcs
+    - id: modules
       title: "Arcs"
       style: "docked"
       background: light
       contents:
         - text: "Arc 1: R Fundamentals"
-          href: arcs/arc_1.qmd
+          href: modules/arc_1.qmd
         - text: "Arc 2: Your First Reproducible Project"
-          href: arcs/arc_2.qmd
+          href: modules/arc_2.qmd
         - text: "Arc 3: Data Structures"
-          href: arcs/arc_3.qmd
+          href: modules/arc_3.qmd
         - text: "Arc 4: Reproducible Reports"
-          href: arcs/arc_4.qmd
+          href: modules/arc_4.qmd
         - text: "Arc 5: Tidyverse"
-          href: arcs/arc_5.qmd
+          href: modules/arc_5.qmd
         - text: "Arc 6: Git & GitHub"
-          href: arcs/arc_6.qmd
+          href: modules/arc_6.qmd
         - text: "Arc 7: DESeq2 Pipeline"
-          href: arcs/arc_7.qmd
+          href: modules/arc_7.qmd
         - text: "Arc 8: Apptainer & Containers"
-          href: arcs/arc_8.qmd
+          href: modules/arc_8.qmd
 
   page-footer:
     left: "ARCS Workshop Series"

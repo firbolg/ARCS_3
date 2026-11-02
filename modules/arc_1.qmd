@@ -11,7 +11,11 @@ webr:
 
 By the end of this arc, you will have written your first lines of R code, created objects and vectors, and built your first data frame.
 
-🔵 **Slides:** [Open the Arc 1 Slides →](/arcs/arc_1_slides.html)
+🔵 **Slides:** 
+
+[Open slides fullscreen](arc_1_slides.html){target="_blank"}
+
+<iframe src="arc_1_slides.html" width="100%" height="500px" style="border:none;"></iframe>
 
 ## Orient to Positron
 
