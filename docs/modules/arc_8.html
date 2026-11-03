@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>arc_8 – ARCS</title>
+<title>Arc 8: AI, Data Packaging &amp; Ethics – ARCS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -246,17 +281,142 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#demo-ai-writing-code" id="toc-demo-ai-writing-code" class="nav-link" data-scroll-target="#demo-ai-writing-code">Demo: AI Writing Code</a></li>
+  <li><a href="#build-a-reproducibility-checklist-for-ai-generated-code" id="toc-build-a-reproducibility-checklist-for-ai-generated-code" class="nav-link" data-scroll-target="#build-a-reproducibility-checklist-for-ai-generated-code">Build: A Reproducibility Checklist for AI-Generated Code</a></li>
+  <li><a href="#build-code-quarto-annotate-commit" id="toc-build-code-quarto-annotate-commit" class="nav-link" data-scroll-target="#build-code-quarto-annotate-commit">Build: Code → Quarto → Annotate → Commit</a></li>
+  <li><a href="#code-tour-common-ai-failure-modes-in-r" id="toc-code-tour-common-ai-failure-modes-in-r" class="nav-link" data-scroll-target="#code-tour-common-ai-failure-modes-in-r">Code Tour: Common AI Failure Modes in R</a></li>
+  <li><a href="#build-packaging-your-project-for-deposit" id="toc-build-packaging-your-project-for-deposit" class="nav-link" data-scroll-target="#build-packaging-your-project-for-deposit">Build: Packaging Your Project for Deposit</a></li>
+  <li><a href="#reflection-evaluating-reproducibility" id="toc-reflection-evaluating-reproducibility" class="nav-link" data-scroll-target="#reflection-evaluating-reproducibility">Reflection: Evaluating Reproducibility</a></li>
+  <li><a href="#what-we-did-and-why" id="toc-what-we-did-and-why" class="nav-link" data-scroll-target="#what-we-did-and-why">What We Did, and Why</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Arc 8: AI, Data Packaging &amp; Ethics</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p><a href="arc_8_slides.html" target="_blank">Open slides fullscreen</a></p>
+<iframe src="arc_8_slides.html" width="100%" height="350px" style="border:none;">
+</iframe>
+</section>
+<section id="demo-ai-writing-code" class="level2">
+<h2 class="anchored" data-anchor-id="demo-ai-writing-code">Demo: AI Writing Code</h2>
+<!-- TODO: live demo — AI tool generates a short function/script in front 
+     of students. No fixed script here; depends on tool used that day. -->
+</section>
+<section id="build-a-reproducibility-checklist-for-ai-generated-code" class="level2">
+<h2 class="anchored" data-anchor-id="build-a-reproducibility-checklist-for-ai-generated-code">Build: A Reproducibility Checklist for AI-Generated Code</h2>
+<p>Before trusting AI-generated code, check it the same way you’d check your own:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Does it run without modification, in a clean environment?</label></li>
+<li><label><input type="checkbox">Do you understand every line, or just that it “worked”?</label></li>
+<li><label><input type="checkbox">Have you tested it on an edge case (empty input, <code>NA</code>, wrong type)?</label></li>
+<li><label><input type="checkbox">Is it committed with a message describing <em>that it was AI-assisted</em>?</label></li>
+<li><label><input type="checkbox">Has it been added to your <code>.qmd</code> with narrative explaining what it does?</label></li>
+</ul>
+</section>
+<section id="build-code-quarto-annotate-commit" class="level2">
+<h2 class="anchored" data-anchor-id="build-code-quarto-annotate-commit">Build: Code → Quarto → Annotate → Commit</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paste the AI-generated function here</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a narrative sentence above explaining what it's supposed to do</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Run it against a test case</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit with a message noting AI assistance</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="code-tour-common-ai-failure-modes-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="code-tour-common-ai-failure-modes-in-r">Code Tour: Common AI Failure Modes in R</h2>
+<!-- TODO: specific examples not available via retrieval — common, 
+     well-known patterns worth covering: hallucinated package functions 
+     that don't exist, outdated tidyverse syntax, off-by-one indexing 
+     assuming 0-based like Python, silently wrong statistical defaults. -->
+</section>
+<section id="build-packaging-your-project-for-deposit" class="level2">
+<h2 class="anchored" data-anchor-id="build-packaging-your-project-for-deposit">Build: Packaging Your Project for Deposit</h2>
+<p>Your project folder is already most of the way to deposit-ready:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>project/</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>├── raw_data/          (never modified)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>├── processed_data/</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>├── scripts/</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>├── outputs/</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>├── renv.lock</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>├── README.md</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>└── .git/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>⚪ About This — Where Does It Actually Go?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>GitHub Release</strong> — lightweight, no registry account needed, fine for an occasional artifact.</li>
+<li><strong>Zenodo</strong> — mints a citable <strong>DOI</strong> and guarantees long-term archival. The more appropriate route for published research.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="reflection-evaluating-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="reflection-evaluating-reproducibility">Reflection: Evaluating Reproducibility</h2>
+<p><strong>As Ethical Practice</strong> - Accountability in research - Transparency serves scientific rigor - Levels the scientific playing field - Reliable translation to clinical practice</p>
+<p><strong>As Potential Harm</strong> - Data re-identification - Informed consent for secondary use of data - Intensification of extractive research - Data access prioritized over data quality</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 Learn More — CARE Principles for Indigenous Data Governance
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Read more: <a href="https://www.gida-global.org/care">CARE Principles</a></p>
+<p>Reproducibility tools don’t automatically make research ethical — they make it <em>visible</em>. What’s visible can still cause harm if stewardship isn’t part of the practice.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="what-we-did-and-why" class="level2">
+<h2 class="anchored" data-anchor-id="what-we-did-and-why">What We Did, and Why</h2>
+<p><strong>What we built:</strong> verified AI-generated code against a checklist, packaged a project folder for deposit, and sat with what transparency costs as well as what it gives.</p>
+<p><strong>Why it matters:</strong> this is where the whole series points — not just “can you reproduce this,” but “should this exist in the form you’re about to share it in.” That question doesn’t have a script. It has you.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <button id="instructor-toggle-btn">Instructor Notes: Off</button>

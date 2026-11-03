@@ -1,0 +1,133 @@
+---
+title: "Arc 3: Data Structures"
+subtitle: "Vectors, Matrices, Data Frames, and Lists"
+engine: knitr
+filters:
+  - webr
+webr:
+  cell-options:
+    reset-button: true
+---
+
+## Slides
+
+[Open slides fullscreen](arc_3_slides.html){target="_blank"}
+
+<iframe src="arc_3_slides.html" width="100%" height="400px" style="border:none;"></iframe>
+
+## Build: Lists
+
+```{webr-r}
+# A list can hold mixed, differently-shaped things together
+sample_info <- list(
+  id = "GSM3119015",
+  values = c(12, 18, 9),
+  notes = "control group"
+)
+sample_info$notes
+```
+
+::: {.callout-note collapse="true"}
+## ⚪ About This — Why Lists?
+A data frame requires every column to be the same length. A list doesn't — 
+it's the structure R reaches for when things genuinely don't fit a tidy 
+rectangle, which happens more often than you'd expect once you start working 
+with real analysis output (model results, nested settings, mixed metadata).
+:::
+
+## Build: Base R Subsetting (Just Enough to Read Code)
+
+```{webr-r}
+rawc[1, ]              # entire first row
+rawc[, 3]              # entire third column
+rawc[1059, "GSM3119015"]   # one specific cell
+rawc$GSM3119015             # a column, by name
+```
+
+Conditional subsetting uses the same comparison operators you already know:
+`==`, `!=`, `>`, `<`, `>=`, `<=`, and `%in%`.
+
+::: {.callout-tip collapse="true"}
+## 🔍 Learn More — You Don't Need to Master This Today
+There are several equally valid ways to subset in base R. The goal here is 
+recognition, not fluency — so that when you see `df[row, col]` or `df$col` 
+in someone else's script, you're not stopped cold.
+:::
+
+## Build: Checking for Missing Values
+
+```{webr-r}
+anyNA(rawc)
+which(is.na(rawc$GSM3119015))
+```
+
+::: {.callout-tip collapse="true"}
+## 🔍 Learn More — Zero vs. NA: Not the Same Thing
+A `0` means "we measured this, and the value was zero." An `NA` means 
+"we don't know this value." Replacing a missing value with `0` without 
+thinking it through can quietly distort every downstream calculation — 
+averages, totals, and models all treat a fabricated zero as real data.
+:::
+
+## Build: Writing Your Own Function
+
+```{webr-r}
+celsius_to_fahrenheit <- function(temp_c) {
+  temp_f <- (temp_c * 9/5) + 32
+  return(temp_f)
+}
+celsius_to_fahrenheit(20)
+```
+
+::: {.callout-note collapse="true"}
+## ⚪ About This — Why Write a Function?
+This is the **DRY principle** — Don't Repeat Yourself. If you find yourself 
+copy-pasting the same calculation more than twice, that's the signal to 
+wrap it in a function instead.
+:::
+
+## Build: `for` Loops
+
+```{webr-r}
+for (i in 1:5) {
+  print(i^2)
+}
+```
+
+## Build: `if` / `else` Conditionals
+
+```{webr-r}
+check_value <- function(x) {
+  if (x > 0) {
+    "positive"
+  } else if (x < 0) {
+    "negative"
+  } else {
+    "zero"
+  }
+}
+check_value(-4)
+```
+
+## Build: Reading an Error Message (Deliberate Exercise)
+
+```{r}
+#| eval: false
+mean(FamAges)   # object doesn't exist yet — intentional
+```
+
+::: {.callout-important collapse="true"}
+## 🔴 Instructor Note
+Let this error sit uncorrected for a beat before explaining. The goal is 
+normalizing errors as information, not something to panic over — most of 
+your future debugging time will be spent reading messages like this one.
+:::
+
+## What We Did, and Why
+
+**What we built:** lists, base R subsetting, a custom function, a `for` 
+loop, an `if`/`else` conditional, and a deliberate error.
+
+**Why it matters:** these are the building blocks that let a script adapt 
+to real data instead of breaking the first time something doesn't match 
+exactly what you expected.

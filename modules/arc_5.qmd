@@ -1,0 +1,156 @@
+---
+title: "Arc 5: Tidyverse"
+subtitle: "Data Cleaning with Packages"
+engine: knitr
+filters:
+  - webr
+webr:
+  cell-options:
+    reset-button: true
+---
+
+## Slides
+
+[Open slides fullscreen](arc_5_slides.html){target="_blank"}
+
+<iframe src="arc_5_slides.html" width="100%" height="450px" style="border:none;"></iframe>
+
+## Build: Load Packages
+
+```{r}
+#| include: false
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
+## Build: Importing with `read_csv()`
+
+```{r}
+#| eval: false
+# ---- Download once, save locally ----
+metadata_url  <- "https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv"
+rawcounts_url <- "https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv"
+
+download.file(metadata_url,  destfile = here("raw_data", "GSE113754_filtered_metadata.csv"))
+download.file(rawcounts_url, destfile = here("raw_data", "GSE113754_GeneLevel_Raw_data.csv"))
+
+raw_metadata <- read_csv(here("raw_data", "GSE113754_filtered_metadata.csv"))
+raw_data     <- read_csv(here("raw_data", "GSE113754_GeneLevel_Raw_data.csv"))
+```
+
+::: {.callout-tip collapse="true"}
+## 🔍 Learn More — The `rio` Package
+`rio::import()` is a popular alternative that auto-detects file type and 
+picks the right reader underneath — handy if your project mixes `.csv`, 
+`.xlsx`, `.sav`, and `.dta` files. For a single, consistent file type like 
+the `.csv` files here, `read_csv()` works directly and is what you'll see 
+most often in published scripts and tutorials.
+:::
+
+## Build: `dplyr` Verbs and the Pipe
+
+```{r}
+#| eval: false
+clean_data <- raw_data %>%
+  clean_names() %>%
+  rename(gene_id = v1) %>%
+  mutate(gsm3119015 = replace_na(gsm3119015, 0)) %>%
+  mutate(gene_id_symbol = paste(gene_id, gene_symbol, sep = "|")) %>%
+  select(gene_id_symbol, everything(), -gene_symbol, -gene_id) %>%
+  column_to_rownames(var = colnames(.)[1])
+```
+
+## Build: Cleaning the Metadata
+
+```{r}
+#| eval: false
+clean_meta_data <- raw_metadata %>%
+  clean_names() %>%
+  rename(sample_id = v1, condition = characteristics) %>%
+  mutate(
+    condition = case_when(
+      grepl("homecage", condition)          ~ "normal",
+      grepl("sleep deprivation", condition) ~ "sleep_deprived",
+      TRUE ~ condition
+    )) %>%
+  mutate(
+    genotype = case_when(
+      grepl("WT",     genotype, ignore.case = TRUE) ~ "WT",
+      grepl("shank3", genotype, ignore.case = TRUE) ~ "shank3",
+      TRUE ~ genotype
+    )) %>%
+  mutate(geno_cond = paste0(genotype, condition)) %>%
+  select(sample_id, genotype, condition, geno_cond) %>%
+  mutate(sample_id = str_to_lower(sample_id))
+```
+
+## Build: Harmonizing the Two Files
+
+```{r}
+#| eval: false
+clean_data <- clean_data %>%
+  select(all_of(clean_meta_data$sample_id))
+
+setequal(clean_meta_data$sample_id, colnames(clean_data))
+```
+
+::: {.callout-important collapse="true"}
+## 🔴 About This — This Is the Whole Point
+This check is exactly what the Arc 2 "data management gone awry" story 
+was missing — a scripted, verifiable confirmation that two files 
+actually match, instead of a manual check done from memory.
+:::
+
+::: {.callout-note collapse="true"}
+## 💻 Try It Live — Browser-Based / Async Students
+
+Running in your browser, there's no local file system to download into — 
+so this version reads each file directly from its URL.
+
+```{webr-r}
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(janitor)
+library(readr)
+
+metadata_url  <- "https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv"
+rawcounts_url <- "https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv"
+
+raw_metadata <- read_csv(metadata_url)
+raw_data     <- read_csv(rawcounts_url)
+
+clean_data <- raw_data %>%
+  clean_names() %>%
+  rename(gene_id = v1) %>%
+  mutate(gsm3119015 = replace_na(gsm3119015, 0)) %>%
+  mutate(gene_id_symbol = paste(gene_id, gene_symbol, sep = "|")) %>%
+  select(gene_id_symbol, everything(), -gene_symbol, -gene_id) %>%
+  column_to_rownames(var = colnames(.)[1])
+
+clean_meta_data <- raw_metadata %>%
+  clean_names() %>%
+  rename(sample_id = v1, condition = characteristics) %>%
+  mutate(
+    condition = case_when(
+      grepl("homecage", condition)          ~ "normal",
+      grepl("sleep deprivation", condition) ~ "sleep_deprived",
+      TRUE ~ condition
+    )) %>%
+  mutate(
+    genotype = case_when(
+      grepl("WT",     genotype, ignore.case = TRUE) ~ "WT",
+      grepl("shank3", genotype, ignore.case = TRUE) ~ "shank3",
+      TRUE ~ genotype
+    )) %>%
+  mutate(geno_cond = paste0(genotype, condition)) %>%
+  select(sample_id, genotype, condition, geno_cond) %>%
+  mutate(sample_id = str_to_lower(sample_id))
+
+clean_data <- clean_data %>%
+  select(all_of(clean_meta_data$sample_id))
+
+setequal(clean_meta_data$sample_id, colnames(clean_data))
+```
+:::

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>arc_6 – ARCS</title>
+<title>Arc 6: Git &amp; GitHub – ARCS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -246,17 +246,122 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#build-init-commit-push-github-desktop" id="toc-build-init-commit-push-github-desktop" class="nav-link" data-scroll-target="#build-init-commit-push-github-desktop">Build: Init, Commit, Push (GitHub Desktop)</a></li>
+  <li><a href="#build-commit-discipline-practiced-incrementally" id="toc-build-commit-discipline-practiced-incrementally" class="nav-link" data-scroll-target="#build-commit-discipline-practiced-incrementally">Build: Commit Discipline, Practiced Incrementally</a></li>
+  <li><a href="#code-tour-pull-requests" id="toc-code-tour-pull-requests" class="nav-link" data-scroll-target="#code-tour-pull-requests">Code Tour: Pull Requests</a></li>
+  <li><a href="#what-we-did-and-why" id="toc-what-we-did-and-why" class="nav-link" data-scroll-target="#what-we-did-and-why">What We Did, and Why</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Arc 6: Git &amp; GitHub</h1>
+<p class="subtitle lead">Introduction to Version Control</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p><a href="arc_6_slides.html" target="_blank">Open slides fullscreen</a></p>
+<iframe src="arc_6_slides.html" width="100%" height="400px" style="border:none;">
+</iframe>
+</section>
+<section id="build-init-commit-push-github-desktop" class="level2">
+<h2 class="anchored" data-anchor-id="build-init-commit-push-github-desktop">Build: Init, Commit, Push (GitHub Desktop)</h2>
+<!-- TODO: full step-by-step GitHub Desktop screenshots/instructions — 
+     pull from your current source file; not found via retrieval. -->
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>🔴 About This — Never Overwrite Raw Data
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Once something is committed as <code>raw_data/</code>, treat it as permanent. If a cleaning step is wrong, fix it downstream in <code>processed_data/</code> — don’t edit the raw file itself.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="build-commit-discipline-practiced-incrementally" class="level2">
+<h2 class="anchored" data-anchor-id="build-commit-discipline-practiced-incrementally">Build: Commit Discipline, Practiced Incrementally</h2>
+<ul>
+<li>Commit after each meaningful step today — importing, cleaning, harmonizing — not just once at the very end.</li>
+<li>A good commit message answers: <strong>what changed, and why?</strong></li>
+</ul>
+</section>
+<section id="code-tour-pull-requests" class="level2">
+<h2 class="anchored" data-anchor-id="code-tour-pull-requests">Code Tour: Pull Requests</h2>
+<!-- TODO: existing PR walkthrough content not found via retrieval — 
+     pull from current source. -->
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 Learn More — Pull Requests and Collaborative Review
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Full branch-and-PR workflows are covered in the Collaborative Workflows extension; here we’re just showing you what one looks like.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔍 Learn More — FAIR and CARE Principles
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>FAIR</strong> — Findable, Accessible, Interoperable, Reusable — describes how research outputs should be structured so others (including future-you) can find and use them.</p>
+<p><strong>CARE</strong> — Collective Benefit, Authority to Control, Responsibility, Ethics — centers who the data is <em>about</em>, particularly for Indigenous data governance, asking not just “can this be reused” but “should it be, and by whose permission.”</p>
+<p>We’ll return to both of these directly in Arc 8.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="what-we-did-and-why" class="level2">
+<h2 class="anchored" data-anchor-id="what-we-did-and-why">What We Did, and Why</h2>
+<p><strong>What we built:</strong> a committed history of today’s work, with discipline around <em>when</em> to commit and <em>what</em> a commit message should say.</p>
+<p><strong>Why it matters:</strong> your commit history is becoming a lab notebook for your code — a record of what changed and why, that exists independent of your memory.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <button id="instructor-toggle-btn">Instructor Notes: Off</button>

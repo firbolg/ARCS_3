@@ -1,0 +1,31 @@
+---
+title: "ARCS Series"
+subtitle: "Arc 6: Git & GitHub"
+format:
+  revealjs:
+    incremental: false
+---
+
+## Git vs. GitHub
+
+::: {.incremental}
+- **Git** — a command-line, distributed version control system. Created by Linus Torvalds in 2005. The industry standard.
+- **GitHub** — a web/desktop platform *built on* Git, adding a graphical interface, cloud hosting, Codespaces, and collaboration tools.
+- Git is the engine. GitHub is one (very common) place to park the car.
+:::
+
+## Why Version Control Matters for Research
+
+> "A system that records every change to your files, code, and documentation over time — creating a complete and auditable history of your research workflow."
+
+::: {.incremental}
+- Reproducibility
+- Collaboration
+- Accountability
+- A safety net
+- Transparency
+:::
+
+## Let's Build
+
+<!-- Bridge slide -->

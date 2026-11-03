@@ -1,0 +1,36 @@
+---
+title: "ARCS Series"
+subtitle: "Arc 7: DESeq2 Pipeline & Containers"
+format:
+  revealjs:
+    incremental: false
+---
+
+## Your Code, Someone Else's Machine
+
+- A shared repo and a locked `renv.lock` still leave one thing unaddressed: the operating system underneath.
+- Containers package the *entire* environment — OS included.
+
+## Containers vs. Virtual Machines
+
+- A **virtual machine** simulates an entire computer, including its own OS kernel — heavy, slow to start.
+- A **container** shares the host's Linux kernel and packages only what sits above it — software, libraries, files.
+- That's why a container starts in seconds, and why it needs Linux specifically: it isn't simulating a kernel, it's borrowing the one already running.
+
+## Four Words You Need
+
+| Term | What it is |
+|---|---|
+| **Container** | Software packaged with everything it needs to run |
+| **Image** (`.sif`) | The actual file on disk — one shareable artifact |
+| **Apptainer** | The program that builds and runs images |
+| **`.def` file** | The plain-text recipe describing what goes into an image |
+
+## A Preview, Not the Whole Story
+
+- Today you'll watch a real DESeq2 pipeline run inside a real container.
+- Full depth on each piece — the pipeline itself, and container-based HPC work — lives in dedicated extension courses.
+
+## Let's Watch It Run
+
+<!-- Bridge slide -->

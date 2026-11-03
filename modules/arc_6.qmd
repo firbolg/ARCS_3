@@ -1,0 +1,68 @@
+---
+title: "Arc 6: Git & GitHub"
+subtitle: "Introduction to Version Control"
+engine: knitr
+filters:
+  - webr
+webr:
+  cell-options:
+    reset-button: true
+---
+
+## Slides
+
+[Open slides fullscreen](arc_6_slides.html){target="_blank"}
+
+<iframe src="arc_6_slides.html" width="100%" height="400px" style="border:none;"></iframe>
+
+## Build: Init, Commit, Push (GitHub Desktop)
+
+<!-- TODO: full step-by-step GitHub Desktop screenshots/instructions — 
+     pull from your current source file; not found via retrieval. -->
+
+::: {.callout-important collapse="true"}
+## 🔴 About This — Never Overwrite Raw Data
+Once something is committed as `raw_data/`, treat it as permanent. If a 
+cleaning step is wrong, fix it downstream in `processed_data/` — don't 
+edit the raw file itself.
+:::
+
+## Build: Commit Discipline, Practiced Incrementally
+
+- Commit after each meaningful step today — importing, cleaning, 
+  harmonizing — not just once at the very end.
+- A good commit message answers: **what changed, and why?**
+
+## Code Tour: Pull Requests
+
+<!-- TODO: existing PR walkthrough content not found via retrieval — 
+     pull from current source. -->
+
+::: {.callout-tip collapse="true"}
+## 🔍 Learn More — Pull Requests and Collaborative Review
+Full branch-and-PR workflows are covered in the Collaborative Workflows 
+extension; here we're just showing you what one looks like.
+:::
+
+::: {.callout-tip collapse="true"}
+## 🔍 Learn More — FAIR and CARE Principles
+**FAIR** — Findable, Accessible, Interoperable, Reusable — describes how 
+research outputs should be structured so others (including future-you) 
+can find and use them.
+
+**CARE** — Collective Benefit, Authority to Control, Responsibility, 
+Ethics — centers who the data is *about*, particularly for Indigenous 
+data governance, asking not just "can this be reused" but "should it be, 
+and by whose permission."
+
+We'll return to both of these directly in Arc 8.
+:::
+
+## What We Did, and Why
+
+**What we built:** a committed history of today's work, with discipline 
+around *when* to commit and *what* a commit message should say.
+
+**Why it matters:** your commit history is becoming a lab notebook for 
+your code — a record of what changed and why, that exists independent of 
+your memory.

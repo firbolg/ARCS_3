@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>arc_7 – ARCS</title>
+<title>Arc 7: Advancing Systems-Level Reproducibility – ARCS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -246,17 +281,125 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#demo-launching-a-codespace" id="toc-demo-launching-a-codespace" class="nav-link" data-scroll-target="#demo-launching-a-codespace">Demo: Launching a Codespace</a></li>
+  <li><a href="#code-tour-the-.def-file" id="toc-code-tour-the-.def-file" class="nav-link" data-scroll-target="#code-tour-the-.def-file">Code Tour: The <code>.def</code> File</a></li>
+  <li><a href="#code-tour-running-the-pipeline" id="toc-code-tour-running-the-pipeline" class="nav-link" data-scroll-target="#code-tour-running-the-pipeline">Code Tour: Running the Pipeline</a></li>
+  <li><a href="#build-change-one-parameter-re-run-observe" id="toc-build-change-one-parameter-re-run-observe" class="nav-link" data-scroll-target="#build-change-one-parameter-re-run-observe">Build: Change One Parameter, Re-Run, Observe</a></li>
+  <li><a href="#build-lock-the-environment" id="toc-build-lock-the-environment" class="nav-link" data-scroll-target="#build-lock-the-environment">Build: Lock the Environment</a></li>
+  <li><a href="#what-we-did-and-why" id="toc-what-we-did-and-why" class="nav-link" data-scroll-target="#what-we-did-and-why">What We Did, and Why</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Arc 7: Advancing Systems-Level Reproducibility</h1>
+<p class="subtitle lead">DESeq2 pipeline, containers</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p><a href="arc_7_slides.html" target="_blank">Open slides fullscreen</a></p>
+<iframe src="arc_7_slides.html" width="100%" height="400px" style="border:none;">
+</iframe>
+</section>
+<section id="demo-launching-a-codespace" class="level2">
+<h2 class="anchored" data-anchor-id="demo-launching-a-codespace">Demo: Launching a Codespace</h2>
+<p>A Codespace is a Linux computer running in your browser — needed because Apptainer is Linux-only.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> <span class="at">--version</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> ~/deseq2.sif</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> exec ~/deseq2.sif R <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="code-tour-the-.def-file" class="level2">
+<h2 class="anchored" data-anchor-id="code-tour-the-.def-file">Code Tour: The <code>.def</code> File</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Bootstrap: docker</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>From: bioconductor/bioconductor_docker:RELEASE_3_23-R-4.6.1</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>%post          # run once, at build time — installs DESeq2, ggplot2</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>%environment   # variables set every run</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>%runscript     # the default action of `apptainer run`</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>%test          # sanity check at the end of build</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>⚪ About This — Why Pin the Version?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>RELEASE_3_23-R-4.6.1</code> pins both the Bioconductor release and the R version, instead of using <code>:latest</code> — preventing silent drift if the base image updates after you’ve built your pipeline on it.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="code-tour-running-the-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="code-tour-running-the-pipeline">Code Tour: Running the Pipeline</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> exec ~/deseq2.sif Rscript scripts/pipeline.R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>PADJ      <span class="ot">&lt;-</span> <span class="fl">0.05</span>      <span class="co"># adjusted p-value (FDR) cutoff</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>LFC       <span class="ot">&lt;-</span> <span class="dv">1</span>         <span class="co"># |log2 fold change| cutoff</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>CONDITION <span class="ot">&lt;-</span> <span class="st">"normal"</span>  <span class="co"># which condition to keep</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="build-change-one-parameter-re-run-observe" class="level2">
+<h2 class="anchored" data-anchor-id="build-change-one-parameter-re-run-observe">Build: Change One Parameter, Re-Run, Observe</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>LFC <span class="ot">&lt;-</span> <span class="dv">0</span>   <span class="co"># active modification point</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Changing <code>LFC</code> from <code>1</code> to <code>0</code> moves the significant gene count from <strong>3 → 16</strong>. Tightening <code>PADJ</code> to <code>0.01</code> afterward moves it <strong>16 → 9</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>⚪ About This — Statistical vs.&nbsp;Biological Significance
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>PADJ</code> is about <strong>statistical</strong> significance — how confident we are the difference is real. <code>LFC</code> is about <strong>biological</strong> significance — how large the difference is. Neither bar is “the right one” — it depends on the question being asked.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="build-lock-the-environment" class="level2">
+<h2 class="anchored" data-anchor-id="build-lock-the-environment">Build: Lock the Environment</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add renv.lock</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"update renv snapshot after workshop"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="what-we-did-and-why" class="level2">
+<h2 class="anchored" data-anchor-id="what-we-did-and-why">What We Did, and Why</h2>
+<p><strong>What we built:</strong> ran a real published pipeline inside a container, modified a biological significance threshold, and watched the result change — then locked the environment that produced it.</p>
+<p><strong>Why it matters:</strong> the container means this exact pipeline runs identically on any Linux machine with Apptainer — your laptop, a collaborator’s, or an HPC cluster. If today’s pace or depth wasn’t enough, this is exactly what the DESeq2 and HPC extension courses go deeper on.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <button id="instructor-toggle-btn">Instructor Notes: Off</button>

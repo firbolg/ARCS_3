@@ -1,0 +1,99 @@
+---
+title: "Arc 7: Advancing Systems-Level Reproducibility"
+subtitle: "DESeq2 pipeline, containers"
+engine: knitr
+filters:
+  - webr
+webr:
+  cell-options:
+    reset-button: true
+---
+
+## Slides
+
+[Open slides fullscreen](arc_7_slides.html){target="_blank"}
+
+<iframe src="arc_7_slides.html" width="100%" height="400px" style="border:none;"></iframe>
+
+## Demo: Launching a Codespace
+
+A Codespace is a Linux computer running in your browser — needed because 
+Apptainer is Linux-only.
+
+```bash
+apptainer --version
+ls -lh ~/deseq2.sif
+apptainer exec ~/deseq2.sif R --version
+```
+
+## Code Tour: The `.def` File
+
+```default
+Bootstrap: docker
+From: bioconductor/bioconductor_docker:RELEASE_3_23-R-4.6.1
+
+%post          # run once, at build time — installs DESeq2, ggplot2
+%environment   # variables set every run
+%runscript     # the default action of `apptainer run`
+%test          # sanity check at the end of build
+```
+
+::: {.callout-note collapse="true"}
+## ⚪ About This — Why Pin the Version?
+`RELEASE_3_23-R-4.6.1` pins both the Bioconductor release and the R 
+version, instead of using `:latest` — preventing silent drift if the 
+base image updates after you've built your pipeline on it.
+:::
+
+## Code Tour: Running the Pipeline
+
+```bash
+apptainer exec ~/deseq2.sif Rscript scripts/pipeline.R
+```
+
+```r
+PADJ      <- 0.05      # adjusted p-value (FDR) cutoff
+LFC       <- 1         # |log2 fold change| cutoff
+CONDITION <- "normal"  # which condition to keep
+```
+
+## Build: Change One Parameter, Re-Run, Observe
+
+```r
+LFC <- 0   # active modification point
+```
+
+Changing `LFC` from `1` to `0` moves the significant gene count from 
+**3 → 16**. Tightening `PADJ` to `0.01` afterward moves it **16 → 9**.
+
+::: {.callout-note collapse="true"}
+## ⚪ About This — Statistical vs. Biological Significance
+`PADJ` is about **statistical** significance — how confident we are the 
+difference is real. `LFC` is about **biological** significance — how 
+large the difference is. Neither bar is "the right one" — it depends on 
+the question being asked.
+:::
+
+## Build: Lock the Environment
+
+```r
+renv::snapshot()
+```
+
+```bash
+git add renv.lock
+git commit -m "update renv snapshot after workshop"
+git push
+```
+
+## What We Did, and Why
+
+**What we built:** ran a real published pipeline inside a container, 
+modified a biological significance threshold, and watched the result 
+change — then locked the environment that produced it.
+
+**Why it matters:** the container means this exact pipeline runs 
+identically on any Linux machine with Apptainer — your laptop, a 
+collaborator's, or an HPC cluster. If today's pace or depth wasn't 
+enough, this is exactly what the DESeq2 and HPC extension courses go 
+deeper on.

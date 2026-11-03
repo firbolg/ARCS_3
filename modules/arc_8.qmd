@@ -1,0 +1,95 @@
+---
+title: "Arc 8: AI, Data Packaging & Ethics"
+---
+
+## Slides
+
+[Open slides fullscreen](arc_8_slides.html){target="_blank"}
+
+<iframe src="arc_8_slides.html" width="100%" height="350px" style="border:none;"></iframe>
+
+## Demo: AI Writing Code
+
+<!-- TODO: live demo — AI tool generates a short function/script in front 
+     of students. No fixed script here; depends on tool used that day. -->
+
+## Build: A Reproducibility Checklist for AI-Generated Code
+
+Before trusting AI-generated code, check it the same way you'd check your own:
+
+- [ ] Does it run without modification, in a clean environment?
+- [ ] Do you understand every line, or just that it "worked"?
+- [ ] Have you tested it on an edge case (empty input, `NA`, wrong type)?
+- [ ] Is it committed with a message describing *that it was AI-assisted*?
+- [ ] Has it been added to your `.qmd` with narrative explaining what it does?
+
+## Build: Code → Quarto → Annotate → Commit
+
+```{r}
+#| eval: false
+# Paste the AI-generated function here
+# Add a narrative sentence above explaining what it's supposed to do
+# Run it against a test case
+# Commit with a message noting AI assistance
+```
+
+## Code Tour: Common AI Failure Modes in R
+
+<!-- TODO: specific examples not available via retrieval — common, 
+     well-known patterns worth covering: hallucinated package functions 
+     that don't exist, outdated tidyverse syntax, off-by-one indexing 
+     assuming 0-based like Python, silently wrong statistical defaults. -->
+
+## Build: Packaging Your Project for Deposit
+
+Your project folder is already most of the way to deposit-ready:
+
+```default
+project/
+├── raw_data/          (never modified)
+├── processed_data/
+├── scripts/
+├── outputs/
+├── renv.lock
+├── README.md
+└── .git/
+```
+
+::: {.callout-note collapse="true"}
+## ⚪ About This — Where Does It Actually Go?
+- **GitHub Release** — lightweight, no registry account needed, fine for an occasional artifact.
+- **Zenodo** — mints a citable **DOI** and guarantees long-term archival. The more appropriate route for published research.
+:::
+
+## Reflection: Evaluating Reproducibility
+
+**As Ethical Practice**
+- Accountability in research
+- Transparency serves scientific rigor
+- Levels the scientific playing field
+- Reliable translation to clinical practice
+
+**As Potential Harm**
+- Data re-identification
+- Informed consent for secondary use of data
+- Intensification of extractive research
+- Data access prioritized over data quality
+
+::: {.callout-tip collapse="true"}
+## 🔍 Learn More — CARE Principles for Indigenous Data Governance
+Read more: [CARE Principles](https://www.gida-global.org/care)
+
+Reproducibility tools don't automatically make research ethical — they 
+make it *visible*. What's visible can still cause harm if stewardship 
+isn't part of the practice.
+:::
+
+## What We Did, and Why
+
+**What we built:** verified AI-generated code against a checklist, 
+packaged a project folder for deposit, and sat with what transparency 
+costs as well as what it gives.
+
+**Why it matters:** this is where the whole series points — not just 
+"can you reproduce this," but "should this exist in the form you're 
+about to share it in." That question doesn't have a script. It has you.

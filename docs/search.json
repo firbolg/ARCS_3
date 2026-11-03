@@ -2421,5 +2421,633 @@
     "title": "Fundamentals of R",
     "section": "Slides",
     "text": "Slides\nOpen slides fullscreen"
+  },
+  {
+    "objectID": "modules/arc_3.html",
+    "href": "modules/arc_3.html",
+    "title": "Arc 3: Data Structures",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 3: Data Structures"
+    ]
+  },
+  {
+    "objectID": "modules/arc_3.html#slides",
+    "href": "modules/arc_3.html#slides",
+    "title": "Arc 3: Data Structures",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 3: Data Structures"
+    ]
+  },
+  {
+    "objectID": "modules/arc_3.html#build-lists",
+    "href": "modules/arc_3.html#build-lists",
+    "title": "Arc 3: Data Structures",
+    "section": "Build: Lists",
+    "text": "Build: Lists\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote⚪ About This — Why Lists?\n\n\n\n\n\nA data frame requires every column to be the same length. A list doesn’t — it’s the structure R reaches for when things genuinely don’t fit a tidy rectangle, which happens more often than you’d expect once you start working with real analysis output (model results, nested settings, mixed metadata).",
+    "crumbs": [
+      "Arc 3: Data Structures"
+    ]
+  },
+  {
+    "objectID": "modules/arc_3.html#build-base-r-subsetting-just-enough-to-read-code",
+    "href": "modules/arc_3.html#build-base-r-subsetting-just-enough-to-read-code",
+    "title": "Arc 3: Data Structures",
+    "section": "Build: Base R Subsetting (Just Enough to Read Code)",
+    "text": "Build: Base R Subsetting (Just Enough to Read Code)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nConditional subsetting uses the same comparison operators you already know: ==, !=, &gt;, &lt;, &gt;=, &lt;=, and %in%.\n\n\n\n\n\n\nTip🔍 Learn More — You Don’t Need to Master This Today\n\n\n\n\n\nThere are several equally valid ways to subset in base R. The goal here is recognition, not fluency — so that when you see df[row, col] or df$col in someone else’s script, you’re not stopped cold.",
+    "crumbs": [
+      "Arc 3: Data Structures"
+    ]
+  },
+  {
+    "objectID": "modules/arc_3.html#build-checking-for-missing-values",
+    "href": "modules/arc_3.html#build-checking-for-missing-values",
+    "title": "Arc 3: Data Structures",
+    "section": "Build: Checking for Missing Values",
+    "text": "Build: Checking for Missing Values\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nTip🔍 Learn More — Zero vs. NA: Not the Same Thing\n\n\n\n\n\nA 0 means “we measured this, and the value was zero.” An NA means “we don’t know this value.” Replacing a missing value with 0 without thinking it through can quietly distort every downstream calculation — averages, totals, and models all treat a fabricated zero as real data.",
+    "crumbs": [
+      "Arc 3: Data Structures"
+    ]
+  },
+  {
+    "objectID": "modules/arc_3.html#build-writing-your-own-function",
+    "href": "modules/arc_3.html#build-writing-your-own-function",
+    "title": "Arc 3: Data Structures",
+    "section": "Build: Writing Your Own Function",
+    "text": "Build: Writing Your Own Function\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote⚪ About This — Why Write a Function?\n\n\n\n\n\nThis is the DRY principle — Don’t Repeat Yourself. If you find yourself copy-pasting the same calculation more than twice, that’s the signal to wrap it in a function instead.",
+    "crumbs": [
+      "Arc 3: Data Structures"
+    ]
+  },
+  {
+    "objectID": "modules/arc_3.html#build-for-loops",
+    "href": "modules/arc_3.html#build-for-loops",
+    "title": "Arc 3: Data Structures",
+    "section": "Build: for Loops",
+    "text": "Build: for Loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Arc 3: Data Structures"
+    ]
+  },
+  {
+    "objectID": "modules/arc_3.html#build-if-else-conditionals",
+    "href": "modules/arc_3.html#build-if-else-conditionals",
+    "title": "Arc 3: Data Structures",
+    "section": "Build: if / else Conditionals",
+    "text": "Build: if / else Conditionals\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Arc 3: Data Structures"
+    ]
+  },
+  {
+    "objectID": "modules/arc_3.html#build-reading-an-error-message-deliberate-exercise",
+    "href": "modules/arc_3.html#build-reading-an-error-message-deliberate-exercise",
+    "title": "Arc 3: Data Structures",
+    "section": "Build: Reading an Error Message (Deliberate Exercise)",
+    "text": "Build: Reading an Error Message (Deliberate Exercise)\n\nmean(FamAges)   # object doesn't exist yet — intentional\n\n\n\n\n\n\n\nImportant🔴 Instructor Note\n\n\n\n\n\nLet this error sit uncorrected for a beat before explaining. The goal is normalizing errors as information, not something to panic over — most of your future debugging time will be spent reading messages like this one.",
+    "crumbs": [
+      "Arc 3: Data Structures"
+    ]
+  },
+  {
+    "objectID": "modules/arc_3.html#what-we-did-and-why",
+    "href": "modules/arc_3.html#what-we-did-and-why",
+    "title": "Arc 3: Data Structures",
+    "section": "What We Did, and Why",
+    "text": "What We Did, and Why\nWhat we built: lists, base R subsetting, a custom function, a for loop, an if/else conditional, and a deliberate error.\nWhy it matters: these are the building blocks that let a script adapt to real data instead of breaking the first time something doesn’t match exactly what you expected.",
+    "crumbs": [
+      "Arc 3: Data Structures"
+    ]
+  },
+  {
+    "objectID": "modules/arc_3_slides.html#from-objects-to-structures",
+    "href": "modules/arc_3_slides.html#from-objects-to-structures",
+    "title": "ARCS Series",
+    "section": "From Objects to Structures",
+    "text": "From Objects to Structures\n\nSo far, you’ve created objects and seen vectors and data frames exist.\nToday: a second data structure (lists), enough subsetting to read others’ code, and the tools to make your code make decisions."
+  },
+  {
+    "objectID": "modules/arc_3_slides.html#vectors-matrices-data-frames-and-lists",
+    "href": "modules/arc_3_slides.html#vectors-matrices-data-frames-and-lists",
+    "title": "ARCS Series",
+    "section": "Vectors, Matrices, Data Frames — and Lists",
+    "text": "Vectors, Matrices, Data Frames — and Lists\n\nVector — one type of value, in a line.\nMatrix — one type of value, in rows and columns.\nData frame — mixed types allowed, organized in rows and columns; this is what most of your data will look like.\nList — the most flexible structure: can hold anything, including other lists, vectors, or data frames, all at once."
+  },
+  {
+    "objectID": "modules/arc_3_slides.html#why-functions-loops-and-conditionals",
+    "href": "modules/arc_3_slides.html#why-functions-loops-and-conditionals",
+    "title": "ARCS Series",
+    "section": "Why Functions, Loops, and Conditionals?",
+    "text": "Why Functions, Loops, and Conditionals?\n\nA script that only works once, on one exact dataset, isn’t reproducible — it’s lucky.\nFunctions let you package a calculation so you don’t repeat it.\nLoops let you repeat an action without copy-pasting.\nConditionals let your code respond differently depending on what it finds.\nTogether, these are what let a script survive contact with messier, real data.\n\n\nLet’s Build"
+  },
+  {
+    "objectID": "modules/arc_3_slides.html#lets-build",
+    "href": "modules/arc_3_slides.html#lets-build",
+    "title": "ARCS Series",
+    "section": "Let’s Build",
+    "text": "Let’s Build"
+  },
+  {
+    "objectID": "modules/arc_6.html",
+    "href": "modules/arc_6.html",
+    "title": "Arc 6: Git & GitHub",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 6: Git & GitHub"
+    ]
+  },
+  {
+    "objectID": "modules/arc_6.html#slides",
+    "href": "modules/arc_6.html#slides",
+    "title": "Arc 6: Git & GitHub",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 6: Git & GitHub"
+    ]
+  },
+  {
+    "objectID": "modules/arc_6.html#build-init-commit-push-github-desktop",
+    "href": "modules/arc_6.html#build-init-commit-push-github-desktop",
+    "title": "Arc 6: Git & GitHub",
+    "section": "Build: Init, Commit, Push (GitHub Desktop)",
+    "text": "Build: Init, Commit, Push (GitHub Desktop)\n\n\n\n\n\n\n\nImportant🔴 About This — Never Overwrite Raw Data\n\n\n\n\n\nOnce something is committed as raw_data/, treat it as permanent. If a cleaning step is wrong, fix it downstream in processed_data/ — don’t edit the raw file itself.",
+    "crumbs": [
+      "Arc 6: Git & GitHub"
+    ]
+  },
+  {
+    "objectID": "modules/arc_6.html#build-commit-discipline-practiced-incrementally",
+    "href": "modules/arc_6.html#build-commit-discipline-practiced-incrementally",
+    "title": "Arc 6: Git & GitHub",
+    "section": "Build: Commit Discipline, Practiced Incrementally",
+    "text": "Build: Commit Discipline, Practiced Incrementally\n\nCommit after each meaningful step today — importing, cleaning, harmonizing — not just once at the very end.\nA good commit message answers: what changed, and why?",
+    "crumbs": [
+      "Arc 6: Git & GitHub"
+    ]
+  },
+  {
+    "objectID": "modules/arc_6.html#code-tour-pull-requests",
+    "href": "modules/arc_6.html#code-tour-pull-requests",
+    "title": "Arc 6: Git & GitHub",
+    "section": "Code Tour: Pull Requests",
+    "text": "Code Tour: Pull Requests\n\n\n\n\n\n\n\nTip🔍 Learn More — Pull Requests and Collaborative Review\n\n\n\n\n\nFull branch-and-PR workflows are covered in the Collaborative Workflows extension; here we’re just showing you what one looks like.\n\n\n\n\n\n\n\n\n\nTip🔍 Learn More — FAIR and CARE Principles\n\n\n\n\n\nFAIR — Findable, Accessible, Interoperable, Reusable — describes how research outputs should be structured so others (including future-you) can find and use them.\nCARE — Collective Benefit, Authority to Control, Responsibility, Ethics — centers who the data is about, particularly for Indigenous data governance, asking not just “can this be reused” but “should it be, and by whose permission.”\nWe’ll return to both of these directly in Arc 8.",
+    "crumbs": [
+      "Arc 6: Git & GitHub"
+    ]
+  },
+  {
+    "objectID": "modules/arc_6.html#what-we-did-and-why",
+    "href": "modules/arc_6.html#what-we-did-and-why",
+    "title": "Arc 6: Git & GitHub",
+    "section": "What We Did, and Why",
+    "text": "What We Did, and Why\nWhat we built: a committed history of today’s work, with discipline around when to commit and what a commit message should say.\nWhy it matters: your commit history is becoming a lab notebook for your code — a record of what changed and why, that exists independent of your memory.",
+    "crumbs": [
+      "Arc 6: Git & GitHub"
+    ]
+  },
+  {
+    "objectID": "modules/arc_6_slides.html#git-vs.-github",
+    "href": "modules/arc_6_slides.html#git-vs.-github",
+    "title": "ARCS Series",
+    "section": "Git vs. GitHub",
+    "text": "Git vs. GitHub\n\nGit — a command-line, distributed version control system. Created by Linus Torvalds in 2005. The industry standard.\nGitHub — a web/desktop platform built on Git, adding a graphical interface, cloud hosting, Codespaces, and collaboration tools.\nGit is the engine. GitHub is one (very common) place to park the car."
+  },
+  {
+    "objectID": "modules/arc_6_slides.html#why-version-control-matters-for-research",
+    "href": "modules/arc_6_slides.html#why-version-control-matters-for-research",
+    "title": "ARCS Series",
+    "section": "Why Version Control Matters for Research",
+    "text": "Why Version Control Matters for Research\n\n“A system that records every change to your files, code, and documentation over time — creating a complete and auditable history of your research workflow.”\n\n\nReproducibility\nCollaboration\nAccountability\nA safety net\nTransparency"
+  },
+  {
+    "objectID": "modules/arc_6_slides.html#lets-build",
+    "href": "modules/arc_6_slides.html#lets-build",
+    "title": "ARCS Series",
+    "section": "Let’s Build",
+    "text": "Let’s Build"
+  },
+  {
+    "objectID": "modules/arc_4_slides.html#static-vs.-dynamic-documents",
+    "href": "modules/arc_4_slides.html#static-vs.-dynamic-documents",
+    "title": "ARCS Series",
+    "section": "Static vs. Dynamic Documents",
+    "text": "Static vs. Dynamic Documents\nA static script produces output once:\ndata &lt;- read.csv(\"data.csv\")\nmean_x &lt;- mean(data$x)\n# Output: 42.5\n\nIf the data changes, the report is now wrong.\nIf the analysis changes, you have to remember to update the write-up separately.\nThere’s no direct link between what the report says and how it was produced."
+  },
+  {
+    "objectID": "modules/arc_4_slides.html#a-dynamic-possibility",
+    "href": "modules/arc_4_slides.html#a-dynamic-possibility",
+    "title": "ARCS Series",
+    "section": "A Dynamic Possibility",
+    "text": "A Dynamic Possibility\n\nA Quarto document can say: “We loaded a dataset with `r nrow(data)` observations… the mean of x was `r mean_x`.”\nWhen the data changes, the numbers in the sentence change with it — automatically."
+  },
+  {
+    "objectID": "modules/arc_4_slides.html#literate-programming",
+    "href": "modules/arc_4_slides.html#literate-programming",
+    "title": "ARCS Series",
+    "section": "Literate Programming",
+    "text": "Literate Programming\n\nThe core idea: code + text + results, together, in the order a human reads them.\nYour document becomes the methods section and the analysis at once.\nNote: these very slides were built in the tool you’re about to use."
+  },
+  {
+    "objectID": "modules/arc_4_slides.html#lets-build",
+    "href": "modules/arc_4_slides.html#lets-build",
+    "title": "ARCS Series",
+    "section": "Let’s Build",
+    "text": "Let’s Build"
+  },
+  {
+    "objectID": "modules/arc_5_slides.html#what-is-a-package",
+    "href": "modules/arc_5_slides.html#what-is-a-package",
+    "title": "ARCS Series",
+    "section": "What Is a Package?",
+    "text": "What Is a Package?\n\nR packages are collections of functions and data that extend base R.\nInstalled once with install.packages(), loaded each session with library().\nCreated and shared by a global community of users — not by any single authority."
+  },
+  {
+    "objectID": "modules/arc_5_slides.html#why-tidy-data",
+    "href": "modules/arc_5_slides.html#why-tidy-data",
+    "title": "ARCS Series",
+    "section": "Why Tidy Data?",
+    "text": "Why Tidy Data?\n\nTidy data principle: each variable in a column, each observation in a row, each value in a cell.\nThe tidyverse is a collection of packages built around that one shared shape — so once your data is tidy, every tool in the family works the same way.\ndplyr gives you a grammar for this: select(), filter(), mutate(), arrange(), summarize(), group_by().\nThe pipe (%&gt;%) chains these into a readable sequence of steps, read top to bottom."
+  },
+  {
+    "objectID": "modules/arc_5_slides.html#meet-r-where-its-at",
+    "href": "modules/arc_5_slides.html#meet-r-where-its-at",
+    "title": "ARCS Series",
+    "section": "Meet R Where It’s At",
+    "text": "Meet R Where It’s At\n\nPopular doesn’t mean limitation-free.\nTidyverse functions are opinionated — they assume your data is already (or can become) tidy.\nKnowing when a tool fits, and when it doesn’t, is part of using it responsibly."
+  },
+  {
+    "objectID": "modules/arc_5_slides.html#rs-flexibility-revisited",
+    "href": "modules/arc_5_slides.html#rs-flexibility-revisited",
+    "title": "ARCS Series",
+    "section": "R’s Flexibility, Revisited",
+    "text": "R’s Flexibility, Revisited\n\nBack in Arc 1, we said R is flexible — and that flexibility creates responsibility.\nYou’ve felt this by now: code ran, functions worked, but you decided whether the output made sense.\nPackages don’t remove that responsibility. They just change its shape."
+  },
+  {
+    "objectID": "modules/arc_5_slides.html#lets-build",
+    "href": "modules/arc_5_slides.html#lets-build",
+    "title": "ARCS Series",
+    "section": "Let’s Build",
+    "text": "Let’s Build"
+  },
+  {
+    "objectID": "modules/arc_8_slides.html#closing-the-loop",
+    "href": "modules/arc_8_slides.html#closing-the-loop",
+    "title": "ARCS Series",
+    "section": "Closing the Loop",
+    "text": "Closing the Loop\n\nEvery habit in this series has been building toward one idea: your work should be usable by someone who isn’t you.\nToday: AI-assisted code, packaging your project for deposit, and what reproducibility actually asks of you."
+  },
+  {
+    "objectID": "modules/arc_8_slides.html#ai-can-write-code-who-checks-it",
+    "href": "modules/arc_8_slides.html#ai-can-write-code-who-checks-it",
+    "title": "ARCS Series",
+    "section": "AI Can Write Code — Who Checks It?",
+    "text": "AI Can Write Code — Who Checks It?\n\nAI-generated code can run without error and still be wrong — statistically, biologically, or just quietly.\nEverything you’ve learned (functions, error messages, Git history, renv.lock) is exactly the toolkit for verifying code you didn’t write yourself.\nThe habits don’t change. Only who typed the first draft does."
+  },
+  {
+    "objectID": "modules/arc_8_slides.html#series-wrap-up",
+    "href": "modules/arc_8_slides.html#series-wrap-up",
+    "title": "ARCS Series",
+    "section": "Series Wrap-Up",
+    "text": "Series Wrap-Up\n\nThe repo is the reproducible artifact — whether you wrote every line of it or not.\nCode, environment, and data now travel together, with a record of how they got that way."
+  },
+  {
+    "objectID": "modules/arc_7_slides.html#your-code-someone-elses-machine",
+    "href": "modules/arc_7_slides.html#your-code-someone-elses-machine",
+    "title": "ARCS Series",
+    "section": "Your Code, Someone Else’s Machine",
+    "text": "Your Code, Someone Else’s Machine\n\nA shared repo and a locked renv.lock still leave one thing unaddressed: the operating system underneath.\nContainers package the entire environment — OS included."
+  },
+  {
+    "objectID": "modules/arc_7_slides.html#containers-vs.-virtual-machines",
+    "href": "modules/arc_7_slides.html#containers-vs.-virtual-machines",
+    "title": "ARCS Series",
+    "section": "Containers vs. Virtual Machines",
+    "text": "Containers vs. Virtual Machines\n\nA virtual machine simulates an entire computer, including its own OS kernel — heavy, slow to start.\nA container shares the host’s Linux kernel and packages only what sits above it — software, libraries, files.\nThat’s why a container starts in seconds, and why it needs Linux specifically: it isn’t simulating a kernel, it’s borrowing the one already running."
+  },
+  {
+    "objectID": "modules/arc_7_slides.html#four-words-you-need",
+    "href": "modules/arc_7_slides.html#four-words-you-need",
+    "title": "ARCS Series",
+    "section": "Four Words You Need",
+    "text": "Four Words You Need\n\n\n\n\n\n\n\nTerm\nWhat it is\n\n\n\n\nContainer\nSoftware packaged with everything it needs to run\n\n\nImage (.sif)\nThe actual file on disk — one shareable artifact\n\n\nApptainer\nThe program that builds and runs images\n\n\n.def file\nThe plain-text recipe describing what goes into an image"
+  },
+  {
+    "objectID": "modules/arc_7_slides.html#a-preview-not-the-whole-story",
+    "href": "modules/arc_7_slides.html#a-preview-not-the-whole-story",
+    "title": "ARCS Series",
+    "section": "A Preview, Not the Whole Story",
+    "text": "A Preview, Not the Whole Story\n\nToday you’ll watch a real DESeq2 pipeline run inside a real container.\nFull depth on each piece — the pipeline itself, and container-based HPC work — lives in dedicated extension courses."
+  },
+  {
+    "objectID": "modules/arc_7_slides.html#lets-watch-it-run",
+    "href": "modules/arc_7_slides.html#lets-watch-it-run",
+    "title": "ARCS Series",
+    "section": "Let’s Watch It Run",
+    "text": "Let’s Watch It Run"
+  },
+  {
+    "objectID": "modules/arc_5.html",
+    "href": "modules/arc_5.html",
+    "title": "Arc 5: Tidyverse",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 5: Tidyverse"
+    ]
+  },
+  {
+    "objectID": "modules/arc_5.html#slides",
+    "href": "modules/arc_5.html#slides",
+    "title": "Arc 5: Tidyverse",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 5: Tidyverse"
+    ]
+  },
+  {
+    "objectID": "modules/arc_5.html#build-load-packages",
+    "href": "modules/arc_5.html#build-load-packages",
+    "title": "Arc 5: Tidyverse",
+    "section": "Build: Load Packages",
+    "text": "Build: Load Packages",
+    "crumbs": [
+      "Arc 5: Tidyverse"
+    ]
+  },
+  {
+    "objectID": "modules/arc_5.html#build-importing-with-read_csv",
+    "href": "modules/arc_5.html#build-importing-with-read_csv",
+    "title": "Arc 5: Tidyverse",
+    "section": "Build: Importing with read_csv()",
+    "text": "Build: Importing with read_csv()\n\n# ---- Download once, save locally ----\nmetadata_url  &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_filtered_metadata.csv\"\nrawcounts_url &lt;- \"https://raw.githubusercontent.com/CWML/ARCS/main/data/GSE113754_GeneLevel_Raw_data.csv\"\n\ndownload.file(metadata_url,  destfile = here(\"raw_data\", \"GSE113754_filtered_metadata.csv\"))\ndownload.file(rawcounts_url, destfile = here(\"raw_data\", \"GSE113754_GeneLevel_Raw_data.csv\"))\n\nraw_metadata &lt;- read_csv(here(\"raw_data\", \"GSE113754_filtered_metadata.csv\"))\nraw_data     &lt;- read_csv(here(\"raw_data\", \"GSE113754_GeneLevel_Raw_data.csv\"))\n\n\n\n\n\n\n\nTip🔍 Learn More — The rio Package\n\n\n\n\n\nrio::import() is a popular alternative that auto-detects file type and picks the right reader underneath — handy if your project mixes .csv, .xlsx, .sav, and .dta files. For a single, consistent file type like the .csv files here, read_csv() works directly and is what you’ll see most often in published scripts and tutorials.",
+    "crumbs": [
+      "Arc 5: Tidyverse"
+    ]
+  },
+  {
+    "objectID": "modules/arc_5.html#build-dplyr-verbs-and-the-pipe",
+    "href": "modules/arc_5.html#build-dplyr-verbs-and-the-pipe",
+    "title": "Arc 5: Tidyverse",
+    "section": "Build: dplyr Verbs and the Pipe",
+    "text": "Build: dplyr Verbs and the Pipe\n\nclean_data &lt;- raw_data %&gt;%\n  clean_names() %&gt;%\n  rename(gene_id = v1) %&gt;%\n  mutate(gsm3119015 = replace_na(gsm3119015, 0)) %&gt;%\n  mutate(gene_id_symbol = paste(gene_id, gene_symbol, sep = \"|\")) %&gt;%\n  select(gene_id_symbol, everything(), -gene_symbol, -gene_id) %&gt;%\n  column_to_rownames(var = colnames(.)[1])",
+    "crumbs": [
+      "Arc 5: Tidyverse"
+    ]
+  },
+  {
+    "objectID": "modules/arc_5.html#build-cleaning-the-metadata",
+    "href": "modules/arc_5.html#build-cleaning-the-metadata",
+    "title": "Arc 5: Tidyverse",
+    "section": "Build: Cleaning the Metadata",
+    "text": "Build: Cleaning the Metadata\n\nclean_meta_data &lt;- raw_metadata %&gt;%\n  clean_names() %&gt;%\n  rename(sample_id = v1, condition = characteristics) %&gt;%\n  mutate(\n    condition = case_when(\n      grepl(\"homecage\", condition)          ~ \"normal\",\n      grepl(\"sleep deprivation\", condition) ~ \"sleep_deprived\",\n      TRUE ~ condition\n    )) %&gt;%\n  mutate(\n    genotype = case_when(\n      grepl(\"WT\",     genotype, ignore.case = TRUE) ~ \"WT\",\n      grepl(\"shank3\", genotype, ignore.case = TRUE) ~ \"shank3\",\n      TRUE ~ genotype\n    )) %&gt;%\n  mutate(geno_cond = paste0(genotype, condition)) %&gt;%\n  select(sample_id, genotype, condition, geno_cond) %&gt;%\n  mutate(sample_id = str_to_lower(sample_id))",
+    "crumbs": [
+      "Arc 5: Tidyverse"
+    ]
+  },
+  {
+    "objectID": "modules/arc_5.html#build-harmonizing-the-two-files",
+    "href": "modules/arc_5.html#build-harmonizing-the-two-files",
+    "title": "Arc 5: Tidyverse",
+    "section": "Build: Harmonizing the Two Files",
+    "text": "Build: Harmonizing the Two Files\n\nclean_data &lt;- clean_data %&gt;%\n  select(all_of(clean_meta_data$sample_id))\n\nsetequal(clean_meta_data$sample_id, colnames(clean_data))\n\n\n\n\n\n\n\nImportant🔴 About This — This Is the Whole Point\n\n\n\n\n\nThis check is exactly what the Arc 2 “data management gone awry” story was missing — a scripted, verifiable confirmation that two files actually match, instead of a manual check done from memory.\n\n\n\n\n\n\n\n\n\nNote💻 Try It Live — Browser-Based / Async Students\n\n\n\n\n\nRunning in your browser, there’s no local file system to download into — so this version reads each file directly from its URL.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Arc 5: Tidyverse"
+    ]
+  },
+  {
+    "objectID": "modules/arc_4.html",
+    "href": "modules/arc_4.html",
+    "title": "Arc 4: Reproducible Reports",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 4: Reproducible Reports"
+    ]
+  },
+  {
+    "objectID": "modules/arc_4.html#slides",
+    "href": "modules/arc_4.html#slides",
+    "title": "Arc 4: Reproducible Reports",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 4: Reproducible Reports"
+    ]
+  },
+  {
+    "objectID": "modules/arc_4.html#build-your-first-quarto-document",
+    "href": "modules/arc_4.html#build-your-first-quarto-document",
+    "title": "Arc 4: Reproducible Reports",
+    "section": "Build: Your First Quarto Document",
+    "text": "Build: Your First Quarto Document\nIn a new .qmd file, add a code chunk and some narrative text around it:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRender (knit) the document to see the text and code output combine into one finished file.",
+    "crumbs": [
+      "Arc 4: Reproducible Reports"
+    ]
+  },
+  {
+    "objectID": "modules/arc_4.html#code-tour-yaml-header-options",
+    "href": "modules/arc_4.html#code-tour-yaml-header-options",
+    "title": "Arc 4: Reproducible Reports",
+    "section": "Code Tour: YAML Header Options",
+    "text": "Code Tour: YAML Header Options\n---\ntitle: \"Reports\"\nsidebar: arcs02\nfilters:\n  - webr\nwebr:\n  cell-options:\n    reset-button: true\n---\n\n\n\n\n\n\nTip🔍 Learn More — Themes and Output Formats\n\n\n\n\n\nChanging format: html to format: pdf or format: docx in the YAML header changes your entire output type without touching a single line of analysis code — the same document can become a slideshow, a PDF, or a Word file depending only on this header.",
+    "crumbs": [
+      "Arc 4: Reproducible Reports"
+    ]
+  },
+  {
+    "objectID": "modules/arc_4.html#create-a-quarto-document-for-publishing",
+    "href": "modules/arc_4.html#create-a-quarto-document-for-publishing",
+    "title": "Arc 4: Reproducible Reports",
+    "section": "Create a Quarto Document for Publishing",
+    "text": "Create a Quarto Document for Publishing\nIn this exercise you will create a publication-quality document using a PLOS journal template, run a gene variability analysis, and generate a heatmap figure.\n\nSetup\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(scales)\n# if any are missing: install.packages(\"tidyverse\"); install.packages(\"readxl\"); install.packages(\"scales\")\n\n\n\n\n\n\nTipChecking installed packages in Positron\n\n\n\nYou can also check in the Extensions pane by searching for the package name.\n\n\n\n\nInstall the PLOS Template\nquarto add quarto-journals/plos\nquarto use template quarto-journals/plos\n\n\n\n\n\n\nNoteWhat this does\n\n\n\nThis installs a Quarto extension that formats your document to match PLOS journal submission requirements — layout, fonts, and figure formatting. The same approach works for other journal templates under quarto-journals.\n\n\n\n\nGene Variability Analysis\nCopy this into your publication.qmd under ## Gene Variability Analysis:\n#| message: false\n#| warning: false\n\ngene_data_long &lt;- gene_data %&gt;%\n  rename(ensembl_id = `...1`) %&gt;%\n  filter(!is.na(gene_symbol), gene_symbol != \"\") %&gt;%\n  pivot_longer(cols = -c(ensembl_id, gene_symbol),\n               names_to = \"sample\",\n               values_to = \"expression\")\n\ngene_variability &lt;- gene_data_long %&gt;%\n  group_by(gene_symbol, ensembl_id) %&gt;%\n  summarise(\n    mean_expression          = mean(expression, na.rm = TRUE),\n    variance                 = var(expression, na.rm = TRUE),\n    coefficient_of_variation = sd(expression, na.rm = TRUE) / mean_expression,\n    .groups = 'drop'\n  )\n\ntop_genes &lt;- gene_variability %&gt;%\n  arrange(desc(variance)) %&gt;%\n  slice_head(n = 15)\n\ncat(\"Total genes analyzed:\", nrow(gene_variability), \"\\n\")\ncat(\"Mean variance across all genes:\",\n    round(mean(gene_variability$variance, na.rm = TRUE), 2), \"\\n\")\ncat(\"Most variable gene:\", top_genes$gene_symbol[1],\n    \"with variance =\", round(top_genes$variance[1], 2), \"\\n\")\n\ncat(\"\\nTop 10 most variable genes:\\n\")\nprint(top_genes %&gt;%\n        select(gene_symbol, variance) %&gt;%\n        slice_head(n = 10) %&gt;%\n        mutate(variance = round(variance, 2)))\n\n\nData Visualization\nCopy this into your publication.qmd under ## Data Visualization:\n#| fig-cap: \"Expression heatmap showing scaled expression levels of the\n#|   15 most variable genes across all samples. Blue indicates\n#|   below-average expression, white indicates average expression,\n#|   and red indicates above-average expression for each gene.\"\n#| fig-width: 10\n#| fig-height: 6\n\nheatmap_data &lt;- gene_data_long %&gt;%\n  filter(gene_symbol %in% top_genes$gene_symbol) %&gt;%\n  left_join(top_genes %&gt;% select(gene_symbol, variance),\n            by = \"gene_symbol\") %&gt;%\n  group_by(gene_symbol) %&gt;%\n  mutate(scaled_expr = scale(expression)[, 1]) %&gt;%\n  ungroup()\n\nexpression_heatmap &lt;- heatmap_data %&gt;%\n  ggplot(aes(x = sample,\n             y = reorder(gene_symbol, variance),\n             fill = scaled_expr)) +\n  geom_tile(color = \"white\", linewidth = 0.1) +\n  scale_fill_gradient2(\n    low = \"blue\", mid = \"white\", high = \"red\",\n    name = \"Scaled\\nExpression\", limits = c(-3, 3),\n    oob = scales::squish\n  ) +\n  labs(\n    title = \"Expression Variability Heatmap: Top 15 Most Variable Genes\",\n    subtitle = \"Genes ordered by variance (highest at top)\",\n    x = \"Sample ID\", y = \"Gene Symbol\"\n  ) +\n  theme_minimal() +\n  theme(\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 8),\n    axis.text.y = element_text(size = 10, face = \"italic\"),\n    plot.title = element_text(hjust = 0.5, face = \"bold\", size = 14),\n    plot.subtitle = element_text(hjust = 0.5, size = 12),\n    legend.position = \"right\",\n    panel.grid = element_blank()\n  )\n\n# print(expression_heatmap)  # not needed when rendering a full .qmd —\n# your rendered document and outputs/ folder will show the result\n\nggsave(paste0(\"outputs/\", timestamp, \"_expression_heatmap.png\"),\n       plot = expression_heatmap, width = 10, height = 6, dpi = 300)\nRender your publication.qmd document to see your PLOS-formatted article.\n\n\n\n\n\n\nTipSaving your figure\n\n\n\nThe ggsave() call saves a high-resolution .png to your outputs/ folder with a timestamp in the filename — the same automated file naming pattern introduced in Arc 2.\n\n\n\n\n\n\n\n\nNote💻 Try It Live — Browser-Based / Async Students\n\n\n\n\n\nIf you don’t have R installed locally, you can run this whole analysis directly in your browser. ggsave() won’t actually save a file here, since this sandbox has no real file system — so print() stays active instead, to show you the plot directly on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Arc 4: Reproducible Reports"
+    ]
+  },
+  {
+    "objectID": "modules/arc_4.html#what-we-did-and-why",
+    "href": "modules/arc_4.html#what-we-did-and-why",
+    "title": "Arc 4: Reproducible Reports",
+    "section": "What We Did, and Why",
+    "text": "What We Did, and Why\nWhat we built: converted a plain README into a Quarto document with an auto-generated, annotated project tree; then created a separate publication-ready document using a real journal template, a gene variability analysis, and a saved heatmap figure.\nWhy it matters: your project’s own documentation now regenerates itself instead of going stale, and your path from raw data to a publication figure is a script someone else could re-run — not a series of manual steps living only in your memory.",
+    "crumbs": [
+      "Arc 4: Reproducible Reports"
+    ]
+  },
+  {
+    "objectID": "modules/arc_7.html",
+    "href": "modules/arc_7.html",
+    "title": "Arc 7: Advancing Systems-Level Reproducibility",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 7: DESeq2 Pipeline"
+    ]
+  },
+  {
+    "objectID": "modules/arc_7.html#slides",
+    "href": "modules/arc_7.html#slides",
+    "title": "Arc 7: Advancing Systems-Level Reproducibility",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 7: DESeq2 Pipeline"
+    ]
+  },
+  {
+    "objectID": "modules/arc_7.html#demo-launching-a-codespace",
+    "href": "modules/arc_7.html#demo-launching-a-codespace",
+    "title": "Arc 7: Advancing Systems-Level Reproducibility",
+    "section": "Demo: Launching a Codespace",
+    "text": "Demo: Launching a Codespace\nA Codespace is a Linux computer running in your browser — needed because Apptainer is Linux-only.\napptainer --version\nls -lh ~/deseq2.sif\napptainer exec ~/deseq2.sif R --version",
+    "crumbs": [
+      "Arc 7: DESeq2 Pipeline"
+    ]
+  },
+  {
+    "objectID": "modules/arc_7.html#code-tour-the-.def-file",
+    "href": "modules/arc_7.html#code-tour-the-.def-file",
+    "title": "Arc 7: Advancing Systems-Level Reproducibility",
+    "section": "Code Tour: The .def File",
+    "text": "Code Tour: The .def File\nBootstrap: docker\nFrom: bioconductor/bioconductor_docker:RELEASE_3_23-R-4.6.1\n\n%post          # run once, at build time — installs DESeq2, ggplot2\n%environment   # variables set every run\n%runscript     # the default action of `apptainer run`\n%test          # sanity check at the end of build\n\n\n\n\n\n\nNote⚪ About This — Why Pin the Version?\n\n\n\n\n\nRELEASE_3_23-R-4.6.1 pins both the Bioconductor release and the R version, instead of using :latest — preventing silent drift if the base image updates after you’ve built your pipeline on it.",
+    "crumbs": [
+      "Arc 7: DESeq2 Pipeline"
+    ]
+  },
+  {
+    "objectID": "modules/arc_7.html#code-tour-running-the-pipeline",
+    "href": "modules/arc_7.html#code-tour-running-the-pipeline",
+    "title": "Arc 7: Advancing Systems-Level Reproducibility",
+    "section": "Code Tour: Running the Pipeline",
+    "text": "Code Tour: Running the Pipeline\napptainer exec ~/deseq2.sif Rscript scripts/pipeline.R\nPADJ      &lt;- 0.05      # adjusted p-value (FDR) cutoff\nLFC       &lt;- 1         # |log2 fold change| cutoff\nCONDITION &lt;- \"normal\"  # which condition to keep",
+    "crumbs": [
+      "Arc 7: DESeq2 Pipeline"
+    ]
+  },
+  {
+    "objectID": "modules/arc_7.html#build-change-one-parameter-re-run-observe",
+    "href": "modules/arc_7.html#build-change-one-parameter-re-run-observe",
+    "title": "Arc 7: Advancing Systems-Level Reproducibility",
+    "section": "Build: Change One Parameter, Re-Run, Observe",
+    "text": "Build: Change One Parameter, Re-Run, Observe\nLFC &lt;- 0   # active modification point\nChanging LFC from 1 to 0 moves the significant gene count from 3 → 16. Tightening PADJ to 0.01 afterward moves it 16 → 9.\n\n\n\n\n\n\nNote⚪ About This — Statistical vs. Biological Significance\n\n\n\n\n\nPADJ is about statistical significance — how confident we are the difference is real. LFC is about biological significance — how large the difference is. Neither bar is “the right one” — it depends on the question being asked.",
+    "crumbs": [
+      "Arc 7: DESeq2 Pipeline"
+    ]
+  },
+  {
+    "objectID": "modules/arc_7.html#build-lock-the-environment",
+    "href": "modules/arc_7.html#build-lock-the-environment",
+    "title": "Arc 7: Advancing Systems-Level Reproducibility",
+    "section": "Build: Lock the Environment",
+    "text": "Build: Lock the Environment\nrenv::snapshot()\ngit add renv.lock\ngit commit -m \"update renv snapshot after workshop\"\ngit push",
+    "crumbs": [
+      "Arc 7: DESeq2 Pipeline"
+    ]
+  },
+  {
+    "objectID": "modules/arc_7.html#what-we-did-and-why",
+    "href": "modules/arc_7.html#what-we-did-and-why",
+    "title": "Arc 7: Advancing Systems-Level Reproducibility",
+    "section": "What We Did, and Why",
+    "text": "What We Did, and Why\nWhat we built: ran a real published pipeline inside a container, modified a biological significance threshold, and watched the result change — then locked the environment that produced it.\nWhy it matters: the container means this exact pipeline runs identically on any Linux machine with Apptainer — your laptop, a collaborator’s, or an HPC cluster. If today’s pace or depth wasn’t enough, this is exactly what the DESeq2 and HPC extension courses go deeper on.",
+    "crumbs": [
+      "Arc 7: DESeq2 Pipeline"
+    ]
+  },
+  {
+    "objectID": "modules/arc_8.html",
+    "href": "modules/arc_8.html",
+    "title": "Arc 8: AI, Data Packaging & Ethics",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 8: Apptainer & Containers"
+    ]
+  },
+  {
+    "objectID": "modules/arc_8.html#slides",
+    "href": "modules/arc_8.html#slides",
+    "title": "Arc 8: AI, Data Packaging & Ethics",
+    "section": "",
+    "text": "Open slides fullscreen",
+    "crumbs": [
+      "Arc 8: Apptainer & Containers"
+    ]
+  },
+  {
+    "objectID": "modules/arc_8.html#demo-ai-writing-code",
+    "href": "modules/arc_8.html#demo-ai-writing-code",
+    "title": "Arc 8: AI, Data Packaging & Ethics",
+    "section": "Demo: AI Writing Code",
+    "text": "Demo: AI Writing Code",
+    "crumbs": [
+      "Arc 8: Apptainer & Containers"
+    ]
+  },
+  {
+    "objectID": "modules/arc_8.html#build-a-reproducibility-checklist-for-ai-generated-code",
+    "href": "modules/arc_8.html#build-a-reproducibility-checklist-for-ai-generated-code",
+    "title": "Arc 8: AI, Data Packaging & Ethics",
+    "section": "Build: A Reproducibility Checklist for AI-Generated Code",
+    "text": "Build: A Reproducibility Checklist for AI-Generated Code\nBefore trusting AI-generated code, check it the same way you’d check your own:\n\nDoes it run without modification, in a clean environment?\nDo you understand every line, or just that it “worked”?\nHave you tested it on an edge case (empty input, NA, wrong type)?\nIs it committed with a message describing that it was AI-assisted?\nHas it been added to your .qmd with narrative explaining what it does?",
+    "crumbs": [
+      "Arc 8: Apptainer & Containers"
+    ]
+  },
+  {
+    "objectID": "modules/arc_8.html#build-code-quarto-annotate-commit",
+    "href": "modules/arc_8.html#build-code-quarto-annotate-commit",
+    "title": "Arc 8: AI, Data Packaging & Ethics",
+    "section": "Build: Code → Quarto → Annotate → Commit",
+    "text": "Build: Code → Quarto → Annotate → Commit\n\n# Paste the AI-generated function here\n# Add a narrative sentence above explaining what it's supposed to do\n# Run it against a test case\n# Commit with a message noting AI assistance",
+    "crumbs": [
+      "Arc 8: Apptainer & Containers"
+    ]
+  },
+  {
+    "objectID": "modules/arc_8.html#code-tour-common-ai-failure-modes-in-r",
+    "href": "modules/arc_8.html#code-tour-common-ai-failure-modes-in-r",
+    "title": "Arc 8: AI, Data Packaging & Ethics",
+    "section": "Code Tour: Common AI Failure Modes in R",
+    "text": "Code Tour: Common AI Failure Modes in R",
+    "crumbs": [
+      "Arc 8: Apptainer & Containers"
+    ]
+  },
+  {
+    "objectID": "modules/arc_8.html#build-packaging-your-project-for-deposit",
+    "href": "modules/arc_8.html#build-packaging-your-project-for-deposit",
+    "title": "Arc 8: AI, Data Packaging & Ethics",
+    "section": "Build: Packaging Your Project for Deposit",
+    "text": "Build: Packaging Your Project for Deposit\nYour project folder is already most of the way to deposit-ready:\nproject/\n├── raw_data/          (never modified)\n├── processed_data/\n├── scripts/\n├── outputs/\n├── renv.lock\n├── README.md\n└── .git/\n\n\n\n\n\n\nNote⚪ About This — Where Does It Actually Go?\n\n\n\n\n\n\nGitHub Release — lightweight, no registry account needed, fine for an occasional artifact.\nZenodo — mints a citable DOI and guarantees long-term archival. The more appropriate route for published research.",
+    "crumbs": [
+      "Arc 8: Apptainer & Containers"
+    ]
+  },
+  {
+    "objectID": "modules/arc_8.html#reflection-evaluating-reproducibility",
+    "href": "modules/arc_8.html#reflection-evaluating-reproducibility",
+    "title": "Arc 8: AI, Data Packaging & Ethics",
+    "section": "Reflection: Evaluating Reproducibility",
+    "text": "Reflection: Evaluating Reproducibility\nAs Ethical Practice - Accountability in research - Transparency serves scientific rigor - Levels the scientific playing field - Reliable translation to clinical practice\nAs Potential Harm - Data re-identification - Informed consent for secondary use of data - Intensification of extractive research - Data access prioritized over data quality\n\n\n\n\n\n\nTip🔍 Learn More — CARE Principles for Indigenous Data Governance\n\n\n\n\n\nRead more: CARE Principles\nReproducibility tools don’t automatically make research ethical — they make it visible. What’s visible can still cause harm if stewardship isn’t part of the practice.",
+    "crumbs": [
+      "Arc 8: Apptainer & Containers"
+    ]
+  },
+  {
+    "objectID": "modules/arc_8.html#what-we-did-and-why",
+    "href": "modules/arc_8.html#what-we-did-and-why",
+    "title": "Arc 8: AI, Data Packaging & Ethics",
+    "section": "What We Did, and Why",
+    "text": "What We Did, and Why\nWhat we built: verified AI-generated code against a checklist, packaged a project folder for deposit, and sat with what transparency costs as well as what it gives.\nWhy it matters: this is where the whole series points — not just “can you reproduce this,” but “should this exist in the form you’re about to share it in.” That question doesn’t have a script. It has you.",
+    "crumbs": [
+      "Arc 8: Apptainer & Containers"
+    ]
   }
 ]

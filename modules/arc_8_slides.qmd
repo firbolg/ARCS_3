@@ -1,0 +1,25 @@
+---
+title: "ARCS Series"
+subtitle: "Arc 8: AI, Data Packaging & Ethics"
+format:
+  revealjs:
+    incremental: false
+---
+
+## Closing the Loop
+
+- Every habit in this series has been building toward one idea: your work should be usable by someone who isn't you.
+- Today: AI-assisted code, packaging your project for deposit, and what reproducibility actually asks of you.
+
+## AI Can Write Code — Who Checks It?
+
+::: {.incremental}
+- AI-generated code can run without error and still be wrong — statistically, biologically, or just quietly.
+- Everything you've learned (functions, error messages, Git history, `renv.lock`) is exactly the toolkit for verifying code you didn't write yourself.
+- The habits don't change. Only who typed the first draft does.
+:::
+
+## Series Wrap-Up
+
+- The repo is the reproducible artifact — whether you wrote every line of it or not.
+- Code, environment, and data now travel together, with a record of how they got that way.
