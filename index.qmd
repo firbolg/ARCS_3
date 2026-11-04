@@ -7,80 +7,57 @@ sidebar: false
 
 ## Why ARCS?
 
-Reproducibility is a core expectation of rigorous research — but the skills that make research reproducible are rarely taught in graduate programs or credentialed programming courses. Researchers learn to write code, but not necessarily to organize it, document it, version it, or hand it off to someone else (including their future selves) in a form that actually works.
+Many introductions to R or Python teach a tool: syntax, functions, how to make a plot. Advancing Reproducibility with Computational Skills (ARCS) teaches something adjacent but different: a research computing mindset grounded in practices that implement [reproducibility](/glossary.qmd#reproducibility). You will learn R here, but every choice we make about *how* we teach it is shaped by a second question running underneath the first: how is scientific data actually expected to be produced, managed, and shared today, and what does your code need to do to hold up under that expectation?
 
-ARCS was built to fill that gap.
+That second question is what separates code that merely runs from code that is **verifiable, repeatable, and accountable to the context it came from**, taking into account what the data represents, how it should be handled, and what responsible, ethical practice requires of the person producing it. A script that works on your machine today, with no record of what version of R produced it or why a column was dropped, is internally functional. It does not meet emerging standards for scientific research. 
 
-We start not with code, but with a project — a folder structure, a README, a version-controlled environment. We introduce R within that context, so that reproducible habits are the foundation, not an afterthought. Every tool we teach, we teach in terms of what problem it solves for a researcher who wants their work to last.
+ARCS treats these as inseparable. Reproducibility is not a topic we add once you already know R. It is the lens through which the whole series is taught.
 
 ## What Is ARCS?
 
-ARCS is a four-session workshop series introducing R-based reproducible research computing to researchers at any career stage and in any domain. No prior programming experience is required.
+ARCS is an eight-module series introducing R-based reproducible research computing to researchers at any career stage and in any domain. No prior programming experience is required.
+
+Each module is built around roughly one hour of core hands-on work, making the series flexible to teach or work through as:
+
+- One full day
+- Two half-day sessions
+- Four two-hour blocks
+- Eight individual sessions
 
 The series covers:
 
-- **Session 1:** Setting up a reproducible R project from scratch — folder structure, environment management with `renv`, version control, and the first R scripts
-- **Session 2:** Writing functions, loops, and conditionals; reading error messages; and producing dynamic documents with Quarto
-- **Session 3:** Transforming and cleaning research data with the tidyverse; committing analytical decisions to Git; saving outputs reproducibly
-- **Session 4:** Containerization and running pipelines across machines; using AI coding assistants critically and responsibly
+- **Module 1:** R fundamentals — objects, vectors, data types, and your first data frame
+- **Module 2:** Building your first reproducible project — folder structure, environment management with `renv`, loading real data, and writing a README
+- **Module 3:** Data structures, writing your own functions, loops, and conditionals, and reading error messages
+- **Module 4:** Producing dynamic, reproducible documents with Quarto
+- **Module 5:** Transforming and cleaning research data with the tidyverse
+- **Module 6:** Version control with Git and GitHub
+- **Module 7:** Advancing systems-level reproducibility — a DESeq2 analysis pipeline and containerization
+- **Module 8:** AI coding assistants, data packaging, and research ethics
 
-Each session builds directly on the last. By the end of the series, participants have a working, version-controlled, reproducible research project — built from scratch, by them.
+By the end of the series, participants have a working, version-controlled, reproducible research project — built from scratch, by them.
 
 ## Who Is It For?
 
 ARCS is designed for researchers — graduate students, postdocs, faculty, staff scientists — who work with data and want to make their computational work more organized, trustworthy, and reusable. It is not a statistics course and not a computer science course. It is a research computing practices course, taught through the lens of things researchers actually need to do.
 
-The series uses a genomics dataset throughout (RNA-seq data from a Shank3 mouse model), but the skills are domain-general. Instructors at other institutions are welcome to substitute a dataset appropriate to their audience.
+The series uses a genomics dataset throughout (RNA-seq data from a Shank3 mouse model), but the skills are domain-general. Instructors at other institutions are welcome to substitute a dataset appropriate to their audience. 
 
-## How to Use This Site
+## New to This Site?
 
-Each session page on this site contains everything you need to follow along:
-
-- **Slides** introduce concepts and provide the "why" before the "how"
-- **Build** sections are hands-on exercises you complete in Positron on your own machine
-- **Code Tour** sections walk through more complex code that you read, run, and modify — but do not write from scratch
-- **Callout boxes** provide just-in-time context, optional depth, and instructor guidance
-
-If you are attending a live workshop, the site is your reference — use it to catch up, check your work, or follow along if your local environment isn't cooperating. If you are working through the materials on your own, the site is designed to be self-contained.
-
-## Understanding the Callout Boxes
-
-Throughout the session pages you will encounter four types of callout boxes. Here is what each one means:
-
-::: {.callout-note icon="false"}
-## 📘 About This
-
-Provides just-in-time context at the moment you need it — explaining *why* a convention exists, what a concept means in practice, or how a tool connects to your research workflow. Read these when you encounter them; they are part of the instruction, not optional extras.
-:::
-
-::: {.callout-tip icon="false"}
-## 💡 Learn More
-
-Optional depth for the curious. These boxes point toward topics beyond the scope of the current session — tools, techniques, or concepts worth knowing about but not required for the session objectives. Return to these on your own time.
-:::
-
-::: {.callout-warning icon="false"}
-## 🔧 Instructor Note
-
-Guidance for instructors and helpers. These boxes contain pedagogical rationale, timing suggestions, common student difficulties, and facilitation notes. Students are welcome to read them, but they are written for the people running the session.
-:::
-
-::: {.callout-important icon="false"}
-## ⚠️ Watch Out
-
-Flags a common mistake, a point of frequent confusion, or a step where something often goes wrong. Pay attention here — these are things we have seen trip people up before.
-:::
+Before your first module, see **Session 0: Before You Arrive** for setup instructions, plus a short guide to how this site is organized — including what the different callout boxes mean and how Slides, Code Tour, and hands-on sections work throughout.
 
 ## Reusing and Adapting These Materials
 
-ARCS was developed at Yale University's Cushing/Whitney Medical Library. The core curriculum is designed to be institution-agnostic: the tools, conventions, and pedagogical approach apply to any research computing context.
+ARCS was developed at Yale University's Cushing/Whitney Medical Library. The core curriculum is designed to be institution-agnostic: the tools, conventions, and pedagogical approach are intended to apply broadly to introducing research computing practices.
 
 If you are an instructor at another institution and want to use or adapt these materials:
 
 - **Fork the repository** on GitHub and adapt freely — the materials are openly licensed
 - Yale-specific content (contact information, institutional context, specific dataset provenance) is clearly marked and easy to replace
 - The dataset used throughout the series is publicly available from GEO (accession GSE113754) and can be substituted with any tabular research dataset
-- The callout box taxonomy, activity type structure (Slides / Build / Code Tour), and session learning objectives are designed to transfer directly
+- The module structure, the callout box taxonomy, and the module learning objectives are designed to transfer directly, regardless of how you schedule the eight modules
+- Schedule and Slides files contain some situational and institutional information that you would want to customize. 
 
 If you do adapt and use these materials, we would love to hear about it — reach out to the ARCS team at the contact information below.
 

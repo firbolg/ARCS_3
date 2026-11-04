@@ -1,5 +1,12 @@
 ---
-title: "Arc 8: AI, Data Packaging & Ethics"
+title: "Arc 8: Arcs and Beyond"
+subtitle: "AI, data packaging, data ethics"
+engine: knitr
+filters:
+  - webr
+webr:
+  cell-options:
+    reset-button: true
 ---
 
 ## Slides

@@ -7,14 +7,12 @@ sidebar: false
 
 ## The Short Version
 
-If you can do only one thing before Session 1, do this: **install R and Positron on your computer.**
+Before Session 1, complete the setup steps below, in order: install R, create a GitHub account, install GitHub Desktop, clone the course data, and install Positron.
 
-Everything else we can help you with at the start of class.
-
-If you can do more, great — the full setup instructions are below. The more you complete before arriving, the more you will get out of Session 1.
+If you get stuck on any step, reach out to us using the contact information at the bottom of this page, or bring your questions to class.
 
 ::: {.callout-important icon="false"}
-## ⚠️ Work or School Laptop?
+## <span class="dot dot-warning"></span> Work or School Laptop?
 
 If you are on a work or school-managed laptop, you may need **administrator rights** to install software. Test this before class by attempting to install R (Step 1 below).
 
@@ -27,8 +25,6 @@ Do not wait until class starts to discover this. It is the single most common se
 ---
 
 ## Setup Steps
-
-Complete as many of these as you can before Session 1, in order. Stop wherever you get stuck and bring your questions to class — or reach out to us in advance using the contact information at the bottom of this page.
 
 ---
 
@@ -58,109 +54,144 @@ xcode-select --install
 A dialog box will appear — click Install and follow the prompts.
 
 ::: {.callout-note icon="false"}
+## <span class="dot dot-note"></span> About This — Why Both R and Rtools/Command Line Tools?
 
-📘 About This: Why Both R and Rtools/Command Line Tools?
-
-R is the language. Rtools (Windows) and Command Line Tools (Mac) are compilers that allow R to build certain packages from source code — including several packages we use in this series. You will not interact with them directly, but R needs them to be present. 
-
+R is the language. Rtools (Windows) and Command Line Tools (Mac) are compilers that allow R to build certain packages from source code — including several packages we use in this series. You will not interact with them directly, but R needs them to be present.
 :::
 
-Step 2: Create a GitHub Account
+### Step 2: Create a GitHub Account
 
 GitHub is where we will store and share our work. You will need a free account.
 
-    Go to github.com and click Sign up
-    Enter your email address, create a password, and choose a username
-    Verify your account using the code GitHub sends to your email
-    You can skip the personalization questions at the end
+1. Go to [github.com](https://github.com) and click Sign up
+2. Enter your email address, create a password, and choose a username
+3. Verify your account using the code GitHub sends to your email
+4. You can skip the personalization questions at the end
 
 Keep a note of your username and password — you will need them in Step 3.
-Step 3: Install GitHub Desktop
+
+### Step 3: Install GitHub Desktop
 
 GitHub Desktop is a visual application that makes it easier to work with Git and GitHub without using the command line.
 
-Windows:
+**Windows:**
 
-    Go to desktop.github.com
-    Click Download for Windows (64-bit)
-    Run the downloaded .exe file — it will install and open automatically
-    Sign in with the GitHub account you created in Step 2
+1. Go to [desktop.github.com](https://desktop.github.com)
+2. Click Download for Windows (64-bit)
+3. Run the downloaded `.exe` file — it will install and open automatically
+4. Sign in with the GitHub account you created in Step 2
 
-Mac:
+**Mac:**
 
-    Go to desktop.github.com
-    Click Download for macOS
-    Open the downloaded .zip file — this extracts the GitHub Desktop app
-    Drag GitHub Desktop into your Applications folder
-    Open it from Applications and sign in with your GitHub account
+1. Go to [desktop.github.com](https://desktop.github.com)
+2. Click Download for macOS
+3. Open the downloaded `.zip` file — this extracts the GitHub Desktop app
+4. Drag GitHub Desktop into your Applications folder
+5. Open it from Applications and sign in with your GitHub account
 
-Step 4: Get the Course Data
+### Step 4: Get the Course Data
 
 We will use the same dataset throughout the series. Clone the course data repository using GitHub Desktop:
 
-    Make sure GitHub Desktop is open and you are signed in
-    Visit this URL in your browser: https://github.com/CWML/arcs-data
-    Click the green Code button
-    Select Open with GitHub Desktop
-    When GitHub Desktop opens, choose a location you can find easily (Desktop or Documents) and click Clone
+1. Make sure GitHub Desktop is open and you are signed in
+2. Visit this URL in your browser: `https://github.com/CWML/arcs-data`
+3. Click the green Code button
+4. Select Open with GitHub Desktop
+5. When GitHub Desktop opens, choose a location you can find easily (Desktop or Documents) and click Clone
 
-This downloads a folder called arcs-data containing the two data files we will use. You do not need to do anything else with this folder yet — we will use it in Session 1.
+This downloads a folder called `arcs-data` containing the two data files we will use. You do not need to do anything else with this folder yet — we will use it in Session 1.
 
 ::: {.callout-note icon="false"}
-📘 About This: Why Clone Instead of Just Downloading?
+## <span class="dot dot-note"></span> About This — Why Clone Instead of Just Downloading?
 
-We clone the data repository rather than downloading a zip file so that you practice the same workflow you will use throughout the series. Cloning also makes it easy to get any updates we push before future sessions. 
-
+We clone the data repository rather than downloading a zip file so that you practice the same workflow you will use throughout the series. Cloning also makes it easy to get any updates we push before future sessions.
 :::
 
-Step 5: Install Positron
+### Step 5: Install Positron
 
 Positron is the IDE (integrated development environment) we will use to write and run R code. It was built by Posit specifically for data science work.
 
-    Go to the Positron releases page on GitHub
-    Find the most recent stable release
-    Under Assets, download the installer for your operating system:
-        Windows: .exe file
-        Mac: .dmg file
-    Run the installer
-    Open Positron — it should automatically detect your R installation and show R in the bottom right corner
+1. Go to the Positron releases page on GitHub
+2. Find the most recent stable release
+3. Under Assets, download the installer for your operating system:
+   - Windows: `.exe` file
+   - Mac: `.dmg` file
+4. Run the installer
+5. Open Positron — it should automatically detect your R installation and show R in the bottom right corner
 
 ::: {.callout-important icon="false"}
-⚠️ Watch Out
+## <span class="dot dot-warning"></span> Watch Out
 
-If Positron does not detect R automatically, go to Settings → R and point it to your R installation manually. On Mac this is usually /usr/local/bin/R or /opt/homebrew/bin/R. On Windows it is usually C:\Program Files\R\R-4.x.x\bin\R.exe. 
-
+If Positron does not detect R automatically, go to Settings → R and point it to your R installation manually. On Mac this is usually `/usr/local/bin/R` or `/opt/homebrew/bin/R`. On Windows it is usually `C:\Program Files\R\R-4.x.x\bin\R.exe`.
 :::
 
-Step 6: Open the Course Repository in Positron
+### Step 6: Open the Course Repository in Positron
 
 Once Positron is installed:
 
-    Open Positron
-    Go to File → Open Folder
-    Navigate to the arcs-data folder you cloned in Step 4
-    Click Open
+1. Open Positron
+2. Go to File → Open Folder
+3. Navigate to the `arcs-data` folder you cloned in Step 4
+4. Click Open
 
 Positron will restart in project mode. You should see the folder contents in the file explorer panel on the left.
 
-## What to Expect at the Start of Session 1
+---
 
-Here is what will happen:
+## How to Use This Site
 
-    The first 15–20 minutes of Session 1 are reserved for setup
-    If you have everything installed, there will be a short warm-up task to work on while others finish setup
-    If you are still installing or troubleshooting, follow the steps above with help from the instructors
-    If you are blocked by an admin rights issue or a persistent error, open this website on your laptop — you can follow along with everything we do in Session 1 from here, and we will help you sort out your local environment between sessions
+Each session page on this site contains everything you need to follow along:
 
-No one gets left behind. Setup problems are a normal part of working with research software, and troubleshooting them is itself a skill we will build together.
+- **Slides** introduce concepts and provide the "why" before the "how"
+- Most of each session happens in topical sections with hands-on code you run and modify directly in Positron on your own machine — this hands-on building is the default way this workshop works, not a separate, labeled activity
+- **Code Tour** sections, used selectively, walk through longer or more complex code that you read and run but are not expected to write from scratch — often showing how a technique extends further than what's strictly required for that session
+- **Callout boxes** provide just-in-time context, optional depth, common-mistake warnings, browser-based alternatives, and instructor guidance
+
+If you are attending a live workshop, the site is your reference — use it to catch up, check your work, or follow along if your local environment isn't cooperating. If you are working through the materials on your own, the site is designed to be self-contained.
+
+## Understanding the Callout Boxes
+
+Throughout the session pages you will encounter five types of callout boxes, each marked with a colored circle. Here is what each one means:
+
+::: {.callout-note icon="false"}
+## <span class="dot dot-note"></span> About This
+
+Provides just-in-time context at the moment you need it — explaining *why* a convention exists, what a concept means in practice, or how a tool connects to your research workflow. Read these when you encounter them; they are part of the instruction, not optional extras.
+:::
+
+::: {.callout-tip icon="false"}
+## <span class="dot dot-tip"></span> Learn More
+
+Optional depth for the curious. These boxes point toward topics beyond the scope of the current session — tools, techniques, or concepts worth knowing about but not required for the session objectives. Return to these on your own time.
+:::
+
+::: {.callout-important icon="false"}
+## <span class="dot dot-warning"></span> Watch Out
+
+Flags a common mistake, a point of frequent confusion, or a step where something often goes wrong. Pay attention here — these are things we have seen trip people up before.
+:::
+
+::: {.callout-note icon="false"}
+## <span class="dot dot-live"></span> Try It Live
+
+A browser-based version of an exercise, for anyone following along without R installed locally. These run directly on this page — nothing to install, though some steps (like saving a file to your computer) work a little differently in-browser than they would on your own machine.
+:::
+
+::: {.callout-warning icon="false"}
+## <span class="dot dot-important"></span> Instructor Note
+
+Guidance for instructors and helpers. These boxes contain pedagogical rationale, timing suggestions, common student difficulties, and facilitation notes. Students are welcome to read them, but they are written for the people running the session.
+:::
+
+---
 
 ## Need Help Before Class?
 
 If you hit a wall during setup, reach out to us before the workshop:
 
-    Levi Dolan: levi.dolan@yale.edu
-    Max Wegener: maximilian.wegener@yale.edu
-    Sofia Fertuzinhos: sofia.fertuzinhos@yale.edu
-    Justin DeMayo: justin.demayo@yale.edu
+- Levi Dolan: levi.dolan@yale.edu
+- Max Wegener: maximilian.wegener@yale.edu
+- Sofia Fertuzinhos: sofia.fertuzinhos@yale.edu
+- Justin DeMayo: justin.demayo@yale.edu
 
 You can also come at 9:00 AM on the day of Session 1 — we will be there early and happy to help.
